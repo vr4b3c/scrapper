@@ -1,5 +1,4 @@
 node_modules/
-files/*.csv
 *.log
 .env
 /.vscode/
