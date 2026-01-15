@@ -288,6 +288,37 @@ function gatherUrlsFromFileOrArg(arg){
   }
   return [];
 }
+function gatherUrlsFromFileOrArg(arg, startIdx){
+  // startIdx is 1-based
+  startIdx = Math.max(1, parseInt(startIdx,10) || 1);
+  if(arg){
+    if(/^https?:\/\//.test(arg)) return [arg];
+    if(fs.existsSync(arg)){
+      const txt = fs.readFileSync(arg,'utf8');
+      // iterate lines to preserve order and allow start index slicing
+      const lines = txt.split(/\r?\n/);
+      const urls = [];
+      for(const line of lines){
+        if(!line) continue;
+        const m = line.match(/https?:\/\/[^\s;\r\n,]+/);
+        if(m) urls.push(m[0]);
+      }
+      return urls.slice(Math.max(0, startIdx-1));
+    }
+  }
+  if(fs.existsSync(DEFAULT_INPUT)){
+    const txt = fs.readFileSync(DEFAULT_INPUT,'utf8');
+    const lines = txt.split(/\r?\n/);
+    const urls = [];
+    for(const line of lines){
+      if(!line) continue;
+      const m = line.match(/https?:\/\/[^\s;\r\n,]+/);
+      if(m) urls.push(m[0]);
+    }
+    return urls.slice(Math.max(0, startIdx-1));
+  }
+  return [];
+}
 
 async function main(){
   const argv = process.argv.slice(2);
@@ -337,9 +368,7 @@ async function main(){
     for(const fname of candidateFiles){
       const cat = fname.replace('e_chalupy_candidates_','').replace('.csv','');
       const inPath = path.join(candidatesDir, fname);
-      let urls = gatherUrlsFromFileOrArg(inPath);
-      // apply 1-based start index
-      try{ const s = Math.max(1, parseInt(startIdx,10)||1); urls = urls.slice(Math.max(0, s-1)); }catch(e){}
+      let urls = gatherUrlsFromFileOrArg(inPath, startIdx);
       const catSlugSanitized = (cat||'cat').replace(/[\/\?=&]/g,'_').replace(/-/g,'_');
       const outPath = path.join(candidatesDir, `echalupy_${catSlugSanitized}.csv`);
       ensureCsvHeader(outPath, 'Name;Phone;Email\n');
@@ -390,7 +419,7 @@ async function main(){
   }
 
   // single-file mode
-  const urls = gatherUrlsFromFileOrArg(input);
+  const urls = gatherUrlsFromFileOrArg(input, startIdx);
   if(!urls || urls.length===0){
     console.error('No URLs found. Pass a URL or a file path, or ensure', DEFAULT_INPUT, 'exists.');
     process.exit(1);
