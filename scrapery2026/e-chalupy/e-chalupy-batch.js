@@ -6,6 +6,7 @@ const DEFAULT_INPUT = path.join(__dirname,'files','e_chalupy_candidates_chaty-ch
 const OUT_FILE = path.join(__dirname,'files','echalupysk.csv');
 const MASTER_OUT = path.join(__dirname,'files','echalupy.csv');
 const CONCURRENCY = parseInt(process.env.CONCURRENCY || '4', 10);
+const DEBUG = !!process.env.DEBUG;
 
 function ensureCsvHeader(filePath, header){
   try{
@@ -109,16 +110,15 @@ async function extractFromPage(page, url){
               try{
                 const anchorsNow = await page.$$eval('.property-detail-popup a[href^="tel:"]', els => els.map(a=> (a.getAttribute('href')||'').replace(/^tel:\s*/i,'').trim()));
                 const popupNow = await page.$$eval('.property-detail-popup .item.phone', els => els.map(e=> (e.innerText||e.textContent||'').trim()));
-                console.log('  [debug] IMMEDIATE RAW after phone clicks - anchors:', anchorsNow, 'popup:', popupNow);
+                if(DEBUG) console.log('  [debug] IMMEDIATE RAW after phone clicks - anchors:', anchorsNow, 'popup:', popupNow);
                 for(const v of [...(anchorsNow||[]), ...(popupNow||[] )]){ if(v && !phonesFromClicks.includes(v)) phonesFromClicks.push(v); }
-                if(phonesFromClicks.length) console.log('  [debug] collected phonesFromClicks now:', phonesFromClicks);
+                if(phonesFromClicks.length && DEBUG) console.log('  [debug] collected phonesFromClicks now:', phonesFromClicks);
               }catch(e){  }
               // prefer to detect parent transform (button -> anchor) if possible
               try{
                 const switched = await waitForPhoneSwitch(page, pb, 3000, 100);
                
                 if(!switched){
-             
                   await waitForSelectorPoll(page, '.property-detail-popup a.item.phone', 3000, 100);
                 }
               }catch(e){ }
@@ -133,25 +133,30 @@ async function extractFromPage(page, url){
 
     // click any element that contains text like "Zobrazit telefon" to reveal phone
     try{
-      const clicked = await page.evaluate(()=>{
-        const re = /zobrazit\s+telefon/i;
-        const els = Array.from(document.querySelectorAll('a,button,span,div'));
-        let c = 0;
-        for(const el of els){
-          try{ if(el.innerText && re.test(el.innerText)){ el.click(); c++; } }catch(e){}
-        }
-        return c;
-      });
+      // if we already collected phones from the popup buttons, skip further reveal actions
+      if(!(phonesFromClicks && phonesFromClicks.length)){
+        const clicked = await page.evaluate(()=>{
+          const re = /zobrazit\s+telefon/i;
+          const els = Array.from(document.querySelectorAll('a,button,span,div'));
+          let c = 0;
+          for(const el of els){
+            try{ if(el.innerText && re.test(el.innerText)){ el.click(); c++; } }catch(e){}
+          }
+          return c;
+        });
 
-      // wait for phone to be revealed (fast polling)
-      await waitForPhoneReveal(page, 5000, 100);
-      await sleep(50);
-    }catch(e){ console.log('  [debug] evaluate reveal threw', e && e.message); }
+        // wait for phone to be revealed (fast polling)
+        await waitForPhoneReveal(page, 5000, 100);
+        await sleep(50);
+      }
+    }catch(e){ if(DEBUG) console.log('  [debug] evaluate reveal threw', e && e.message); }
 
     // fallback generic click selectors
     const contactSelectors = ['.btn2.btn-contact','button.item.contact','.item.contact','a[href^="mailto:"]','a[href^="tel:"]'];
-    for(const sel of contactSelectors){
-      try{ const el = await page.$(sel); if(el){ console.log('  [debug] clicking fallback selector', sel); await el.click().catch(()=>{}); await sleep(50); } }catch(e){ console.log('  [debug] fallback selector click failed', sel, e && e.message); }
+    if(!(phonesFromClicks && phonesFromClicks.length)){
+      for(const sel of contactSelectors){
+        try{ const el = await page.$(sel); if(el){ if(DEBUG) console.log('  [debug] clicking fallback selector', sel); await el.click().catch(()=>{}); await sleep(50); } }catch(e){ if(DEBUG) console.log('  [debug] fallback selector click failed', sel, e && e.message); }
+      }
     }
 
       // also click any element with text like "Kontakt" / "Kontaktovat" to trigger contact reveal
