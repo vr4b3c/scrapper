@@ -1,0 +1,16 @@
+{
+  "name": "scrappery",
+  "version": "0.1.0",
+  "description": "Collection of scrapers (e-chalupy) using Puppeteer",
+  "main": "scrapery2026/e-chalupy/e-chalupy-batch.js",
+  "scripts": {
+    "start": "node scrapery2026/e-chalupy/e-chalupy-batch.js",
+    "test": "echo \"no tests\" && exit 0"
+  },
+  "keywords": ["scraper","puppeteer","czech"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

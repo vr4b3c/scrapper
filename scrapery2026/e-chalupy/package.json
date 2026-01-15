@@ -1,0 +1,13 @@
+{
+  "name": "e-chalupy-scraper",
+  "version": "0.1.0",
+  "description": "Puppeteer scraper to reveal JS-only contact info on e-chalupy.cz",
+  "main": "e-chalupy.js",
+  "scripts": {
+    "start": "node e-chalupy.js",
+    "dry": "node e-chalupy.js --dry-run"
+  },
+  "dependencies": {
+    "puppeteer": "^24.15.0"
+  }
+}

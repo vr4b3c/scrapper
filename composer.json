@@ -1,0 +1,13 @@
+{
+    "name": "vrabec/scrapper",
+    "description": "Collection of scrapers for various sites",
+    "require": {
+        "php": ">=7.4",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scrapper\\": "src/"
+        }
+    }
+}
