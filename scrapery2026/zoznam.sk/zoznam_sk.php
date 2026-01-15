@@ -228,7 +228,8 @@ if (!$skipCrawl) {
                     $exists = false;
                     foreach ($toVisit as $q) { if ($q['url'] === $full) { $exists = true; break; } }
                     if (!$exists && count($visitedPages) + count($toVisit) < $maxPages) {
-                        $cat = derive_category($full, $startPath);
+                        // paginator links are pages of the current listing -> preserve currentCategory
+                        $cat = $currentCategory ?: derive_category($full, $startPath);
                         $toVisit[] = ['url' => $full, 'category' => $cat];
                     }
                 }
@@ -269,7 +270,12 @@ if (!$skipCrawl) {
                 $exists = false;
                 foreach ($toVisit as $q) { if ($q['url'] === $full) { $exists = true; break; } }
                 if (!$exists && count($visitedPages) + count($toVisit) < $maxPages) {
-                    $cat = derive_category($full, $startPath);
+                    // if this is a pagination/sekcia link, preserve the current listing category
+                    if (stripos($path, 'sekcia.fcgi') !== false || preg_match('/[?&]page=\d+/i', $full)) {
+                        $cat = $currentCategory ?: derive_category($full, $startPath);
+                    } else {
+                        $cat = derive_category($full, $startPath);
+                    }
                     $toVisit[] = ['url' => $full, 'category' => $cat];
                 }
             }
@@ -379,49 +385,158 @@ foreach ($detailUrls as $durl) {
     $phones = [];
 
     // helper: normalize a zkontroluj zda kandidát vypadá jako telefon
-    $add_phone_candidate = function($raw) use (&$phones) {
-        $txt = trim(preg_replace('/[\t\r\n]+/', ' ', $raw));
-        if ($txt === '') return;
-        // vyextrahuj kandidáty (obsahuje tečky i číslice), ale filtruj out mapové souřadnice
-        if (preg_match_all('/[+0-9][0-9 \-\/()\.]{5,}[0-9]/', $txt, $m)) {
-            foreach ($m[0] as $c) {
-                $candidate = trim($c);
-                // skip obvious coordinate-like values: contain '.' but no spaces and don't start with 0/+ (e.g. 19.9141435)
-                $hasSpace = preg_match('/[ \-()\/]/', $candidate);
-                $starts0plus = preg_match('/^[+0]/', $candidate);
-                $hasDot = strpos($candidate, '.') !== false;
-                if ($hasDot && !$hasSpace && !$starts0plus) continue;
+    $add_phone_candidate = function($candidate) use (&$phones) {
+        $candidate = trim($candidate);
+        if ($candidate === '') return;
 
-                $digitsOnly = preg_replace('/\D/', '', $candidate);
-                if (strlen($digitsOnly) < 7) continue;
+        // skip pure decimal numbers (likely coordinates) and coordinate pairs
+        if (preg_match('/^[+-]?\d+\.\d+$/', $candidate)) return;
+        if (preg_match('/^[+-]?\d+\.\d+\s*[, ]\s*[+-]?\d+\.\d+$/', $candidate)) return;
 
+        // if not enough digits, skip
+        $digitsOnly = preg_replace('/\D/', '', $candidate);
+        if (strlen($digitsOnly) < 7) return;
+
+        // smart DP splitting over the full digit string; prefer chunks of lengths 10/9/7/6
+        $n = strlen($digitsOnly);
+        $chunks = [];
+
+        if ($n > 9) {
+            $allowed = [10,9,7,6];
+            $dp = array_fill(0, $n+1, PHP_INT_MAX);
+            $prev = array_fill(0, $n+1, -1);
+            $dp[0] = 0;
+
+            // compute token-boundary positions (bonus if split aligns with token boundary)
+            $boundaries = [];
+            if (preg_match('/\s+/', $candidate)) {
+                $tokens = preg_split('/\s+/', $candidate);
+                $pos = 0;
+                foreach ($tokens as $t) {
+                    $d = preg_replace('/\D/', '', $t);
+                    $pos += strlen($d);
+                    $boundaries[$pos] = true;
+                }
+            }
+
+            for ($i = 0; $i < $n; $i++) {
+                if ($dp[$i] === PHP_INT_MAX) continue;
+                foreach ($allowed as $len) {
+                    if ($i + $len > $n) continue;
+                    $chunk = substr($digitsOnly, $i, $len);
+                    $penalty = abs($len - 9); // prefer 9
+                    if ($chunk[0] === '0') $penalty -= 3;
+                    $endPos = $i + $len;
+                    if (isset($boundaries[$endPos])) $penalty -= 2;
+                    $cost = max(0, $penalty);
+                    if ($dp[$i] + $cost < $dp[$i+$len]) {
+                        $dp[$i+$len] = $dp[$i] + $cost;
+                        $prev[$i+$len] = $len;
+                    }
+                }
+            }
+
+            if ($dp[$n] !== PHP_INT_MAX) {
+                $pos = $n;
+                while ($pos > 0) {
+                    $len = $prev[$pos];
+                    if ($len <= 0) break;
+                    $chunks[] = substr($digitsOnly, $pos - $len, $len);
+                    $pos -= $len;
+                }
+                $chunks = array_reverse($chunks);
+            } else {
+                // fallback: greedily take 9s
+                preg_match_all('/\d{9}/', $digitsOnly, $mch);
+                $chunks = $mch[0];
+                $rest = substr($digitsOnly, count($mch[0]) * 9);
+                if ($rest !== '') $chunks[] = $rest;
+            }
+
+            // pokud kandidát obsahoval oddělovače/mezery, zmapuj chunks zpět na původní formát (zachovej mezery)
+            if (preg_match('/\D/', $candidate)) {
+                $pos = 0;
+                $candidateChars = preg_split('//u', $candidate, -1, PREG_SPLIT_NO_EMPTY);
+                foreach ($chunks as $ch) {
+                    $len = strlen($ch);
+                    $startDigit = $pos;
+                    $endDigit = $pos + $len;
+                    $pos += $len;
+
+                    $digitIndex = 0;
+                    $out = '';
+                    foreach ($candidateChars as $c) {
+                        if (preg_match('/\d/', $c)) {
+                            if ($digitIndex >= $startDigit && $digitIndex < $endDigit) $out .= $c;
+                            $digitIndex++;
+                        } else {
+                            if ($digitIndex > $startDigit && $digitIndex <= $endDigit) $out .= $c;
+                        }
+                    }
+                    $out = preg_replace('/\s+/', ' ', trim($out));
+                    if ($out !== '') $phones[] = $out; else $phones[] = $ch;
+                }
+            } else {
+                foreach ($chunks as $ch) $phones[] = $ch;
+            }
+        } else {
+            // short-ish candidate: accept original formatting if reasonable
+            $hasDot = strpos($candidate, '.') !== false;
+            $hasSpace = preg_match('/[ \-()\/]/', $candidate);
+            $starts0plus = preg_match('/^[+0]/', $candidate);
+            if (!($hasDot && !$hasSpace && !$starts0plus)) {
                 $phones[] = $candidate;
             }
-            return;
-        }
-        // fallback: pokud text obsahuje spíše jednoduché číslo se 7+ čísly,
-        // ale neakceptuj čisté desetinné souřadnice
-        $digitsOnly = preg_replace('/\D/', '', $txt);
-        $hasDot = strpos($txt, '.') !== false;
-        $hasSpace = preg_match('/[ \-()\/]/', $txt);
-        $starts0plus = preg_match('/^[+0]/', $txt);
-        if (strlen($digitsOnly) >= 7 && (!($hasDot && !$hasSpace && !$starts0plus))) {
-            $phones[] = $txt;
         }
     };
 
-    // 1) Hledat elementy s třídou "label" a textem obsahujícím "telef"
+    // 1) Hledat elementy s třídou "label" obsahující "telef" a poté najít nejbližší rodičovský .row,
+    //     z něho vybrat .col-sm-9/.col-md-9 obsahující telefonní čísla oddělená <br>
     foreach ($doc->find('.label') as $lab) {
-        if (stripos($lab->plaintext, 'telef') !== false) {
+        if (stripos($lab->plaintext, 'telef') === false) continue;
+
+        // walk up the DOM to find ancestor with class containing 'row'
+        $node = $lab->node;
+        $rowNode = null;
+        while ($node && $node->parentNode) {
+            $node = $node->parentNode;
+            if ($node->nodeType !== XML_ELEMENT_NODE) continue;
+            $class = $node->getAttribute('class') ?? '';
+            if ($class && stripos($class, 'row') !== false) { $rowNode = $node; break; }
+        }
+
+        // fallback to two-level parent if not found
+        if (!$rowNode) {
             $parent = $lab->node->parentNode;
-            if ($parent && $parent->parentNode) {
-                $container = $parent->parentNode;
-                foreach ($container->childNodes as $child) {
-                    if ($child->nodeType !== XML_ELEMENT_NODE) continue;
-                    $class = $child->getAttribute('class') ?? '';
-                    if (stripos($class, 'col-sm-9') !== false || stripos($class, 'col-md-9') !== false) {
-                        $txt = trim($child->textContent ?? '');
-                        if ($txt !== '') { $add_phone_candidate($txt); break 2; }
+            if ($parent && $parent->parentNode) $rowNode = $parent->parentNode;
+        }
+
+        if ($rowNode) {
+            // look for the column that holds the phone (col-sm-9 / col-md-9)
+            foreach ($rowNode->childNodes as $child) {
+                if ($child->nodeType !== XML_ELEMENT_NODE) continue;
+                $class = $child->getAttribute('class') ?? '';
+                if (stripos($class, 'col-sm-9') !== false || stripos($class, 'col-md-9') !== false) {
+                    $inner = $child->innertext ?? '';
+                    // convert <br> variants to pipe, preserve pipes
+                    $inner = str_ireplace(['<br>', '<br/>', '<br />'], '|', $inner);
+                    $inner = preg_replace('/\s*\|\s*/', '|', $inner);
+                    // remove other tags but keep pipes
+                    $txt = trim(preg_replace('/<[^>]+>/', '', $inner));
+                    if ($txt === '') {
+                        $fallback = trim($child->textContent ?? '');
+                        $fallback = preg_replace('/[\r\n]+/', '|', $fallback);
+                        $fallback = preg_replace('/\s*\|\s*/', '|', $fallback);
+                        $txt = $fallback;
+                    }
+                    if ($txt !== '') {
+                        if (strpos($txt, '|') !== false) {
+                            $parts = preg_split('/\s*\|\s*/', $txt);
+                            foreach ($parts as $p) { $p = trim($p); if ($p !== '') $add_phone_candidate($p); }
+                        } else {
+                            $add_phone_candidate($txt);
+                        }
+                        break 2;
                     }
                 }
             }
@@ -436,17 +551,38 @@ foreach ($detailUrls as $durl) {
         }
     }
 
+    // 2b) Prefer explicit telephone selectors / microdata before regex fallback
+    $foundBySelector = false;
+    $selectors = ['[itemprop=telephone]', '[class*=phone]', '[class*=tel]', '.contact-phone'];
+    foreach ($selectors as $sel) {
+        foreach ($doc->find($sel) as $el) {
+            $txt = trim($el->plaintext ?? '');
+            if ($txt === '') continue;
+            if (strpos($txt, '|') !== false) {
+                $parts = preg_split('/\s*\|\s*/', $txt);
+                foreach ($parts as $p) { $p = trim($p); if ($p !== '') $add_phone_candidate($p); }
+            } else {
+                $add_phone_candidate($txt);
+            }
+            $foundBySelector = true;
+        }
+        if ($foundBySelector) break;
+    }
+
     // 3) poslední možnost: regex fallback pro celé texty (může vrátit více kandidátů)
-    if (preg_match_all('/[+0-9][0-9 \-\/()\.]{5,}[0-9]/', $doc->plaintext, $m2)) {
+    // 3) regex fallback - only if selector search didn't find explicit phones
+    if (!$foundBySelector && preg_match_all('/[+0-9][0-9 \-\/()\.]{5,}[0-9]/', $doc->plaintext, $m2)) {
         foreach ($m2[0] as $cand) {
             $trim = trim($cand);
+            // skip tokens that look like decimal coordinates (e.g. 19.2795) without separators
+            if (strpos($trim, '.') !== false && !preg_match('/[\s\-()\/]/', $trim)) continue;
             $digitsOnly = preg_replace('/\D/', '', $trim);
             if (strlen($digitsOnly) < 7) continue;
-            // preferuj kandidáty s předponou nebo separátory
-            if (preg_match('/[\s\-\/\.\(\)]/', $trim) || strpos($trim, '+') === 0 || strpos($trim, '0') === 0) {
+            // prefer candidates with separators or leading +/0
+            if (preg_match('/[\s\-\/()]/', $trim) || strpos($trim, '+') === 0 || strpos($trim, '0') === 0) {
                 $add_phone_candidate($trim);
             } else {
-                // pokud čistě čísla, přijmeme jen když začínají 0
+                // if pure digits, accept only when starting with 0
                 if (preg_match('/^[0-9]+$/', $trim) && strpos($trim, '0') === 0) {
                     $add_phone_candidate($trim);
                 }

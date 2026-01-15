@@ -82,7 +82,22 @@ class DOMWrapper {
                 $xpathParts[] = sprintf('%s[contains(concat(" ", normalize-space(@class), " "), " %s ")]', $tag, $class);
                 continue;
             }
-            // attribute selectors not supported, fallback to tag
+            // attribute selectors like [attr=value] or [attr*=value]
+            if (preg_match('/^\[([a-zA-Z0-9_:-]+)(\*?=)([^\]]+)\]$/', $part, $ma)) {
+                $attr = $ma[1];
+                $op = $ma[2];
+                $val = $ma[3];
+                $val = trim($val, "'\" ");
+                if ($op === '=') {
+                    $xpathParts[] = sprintf('*[@%s="%s"]', $attr, $val);
+                } else if ($op === '*=') {
+                    $xpathParts[] = sprintf('*[contains(@%s, "%s")]', $attr, $val);
+                } else {
+                    $xpathParts[] = '*';
+                }
+                continue;
+            }
+            // attribute-like or unsupported token: fallback to tag name
             $xpathParts[] = $part;
         }
         $sep = $relative ? './/' : '//';
