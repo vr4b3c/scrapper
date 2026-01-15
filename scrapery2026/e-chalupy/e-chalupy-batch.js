@@ -53,10 +53,10 @@ async function waitForPhoneReveal(page, timeoutMs=5000, interval=100){
 // Wait until a clicked button element's parent contains an anchor.phone (button -> a transform)
 async function waitForPhoneSwitch(page, buttonHandle, timeoutMs=5000, interval=100){
   try{
-    const start = Date.now();
-    const parentHandle = await (await buttonHandle.getProperty('parentElement')).asElement();
-    if(!parentHandle){ console.log('  [debug] waitForPhoneSwitch: parentElement not found'); return false; }
-    while(Date.now() - start < timeoutMs){
+  const start = Date.now();
+  const parentHandle = await (await buttonHandle.getProperty('parentElement')).asElement();
+  if(!parentHandle){ return false; }
+  while(Date.now() - start < timeoutMs){
       try{
         const a = await parentHandle.$('a.item.phone');
         if(a){ console.log('  [debug] waitForPhoneSwitch: anchor.item.phone appeared in parent'); try{ await a.dispose(); }catch(e){}; try{ await parentHandle.dispose(); }catch(e){}; return true; }
