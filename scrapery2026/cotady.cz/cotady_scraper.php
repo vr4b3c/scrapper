@@ -14,15 +14,22 @@ $CAND_FILE = $FILES_DIR . '/cotady_candidates_ubytovani.csv';
 $OUT_FILE  = $FILES_DIR . '/cotady_ubytovani.csv';
 
 function curl_get($url){
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'cotady-scraper/1.0 (+https://example.org)');
+    static $ch = null;
+    if($ch === null){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'cotady-scraper/1.0 (+https://example.org)');
+        curl_setopt($ch, CURLOPT_ENCODING, '');
+        curl_setopt($ch, CURLOPT_FORBID_REUSE, false);
+        curl_setopt($ch, CURLOPT_FRESH_CONNECT, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Connection: keep-alive']);
+    }
+    curl_setopt($ch, CURLOPT_URL, $url);
     $res = curl_exec($ch);
     $err = curl_error($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
     if($res === false) throw new RuntimeException("curl error: $err");
     if($code >= 400) throw new RuntimeException("http $code");
     return $res;
@@ -128,6 +135,8 @@ $out_override = isset($opts['--out']) ? $opts['--out'] : null;
 // delay controls in milliseconds (defaults roughly 300-600 ms)
 $delay_min_ms = isset($opts['--delay-min']) ? (int)$opts['--delay-min'] : 300;
 $delay_max_ms = isset($opts['--delay-max']) ? (int)$opts['--delay-max'] : 600;
+// ensure each detail total time at least this (ms). If set, the per-detail delay will enforce
+$min_duration_ms = isset($opts['--min-duration-ms']) ? (int)$opts['--min-duration-ms'] : 0;
 $force_fetch = isset($opts['--force-fetch']) || isset($opts['--force']);
 
 // 1) fetch candidate URLs if needed or forced
@@ -208,12 +217,20 @@ for($i=$pos;$i<count($urls);$i++){
     $phone = trim($phone);
     $email = trim($email);
     $t1 = microtime(true);
-    $ms = round(($t1 - $t0) * 1000);
-    echo "  extracted: Name='" . $name . "' | Phone='" . $phone . "' | Email='" . $email . "' | took {$ms} ms\n";
+    $fetch_ms = round(($t1 - $t0) * 1000);
+    $wait_ms = 0;
+    if($min_duration_ms > 0 && $fetch_ms < $min_duration_ms){
+        $wait_ms = $min_duration_ms - $fetch_ms;
+        usleep($wait_ms * 1000);
+    }
+    $total_ms = $fetch_ms + $wait_ms;
+    echo "  extracted: Name='" . $name . "' | Phone='" . $phone . "' | Email='" . $email . "' | fetch {$fetch_ms} ms, total {$total_ms} ms\n";
     $line = str_replace(";",",",$name) . ";" . str_replace(";",",",$phone) . ";" . str_replace(";",",",$email) . "\n";
     file_put_contents($OUT_FILE, $line, FILE_APPEND | LOCK_EX);
-    // polite delay (ms -> us)
-    usleep( ($delay_min_ms * 1000) + rand(0, max(0, ($delay_max_ms - $delay_min_ms) * 1000)) );
+    // if min_duration_ms used, we've already ensured total time; otherwise apply polite random delay
+    if($min_duration_ms <= 0){
+        usleep( ($delay_min_ms * 1000) + rand(0, max(0, ($delay_max_ms - $delay_min_ms) * 1000)) );
+    }
 }
 
 echo "Finished. Results: $OUT_FILE\n";
