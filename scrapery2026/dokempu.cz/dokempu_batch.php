@@ -51,7 +51,7 @@ function extract_detail($html) {
     $phone = '';
     $email = '';
     // Prefer mailto/tel links inside the detail/context near the H1 (owner contact usually there)
-    $disallowed = ["partners@dokempu.cz"];
+    $disallowed = ["partners@dokempu.cz", "undefined", "null", "n/a"];
     $contextNode = null;
     if ($h->length) {
         $contextNode = $h->item(0)->parentNode;
@@ -101,6 +101,22 @@ function extract_detail($html) {
     if (!$phone) {
         if (preg_match('/\+?[0-9][0-9\s\-()]{6,}/', $html, $m)) $phone = trim($m[0]);
     }
+
+    // sanitize common bogus strings
+    $email_lc = strtolower(trim($email));
+    if ($email_lc === '' || in_array($email_lc, $disallowed)) $email = '';
+
+    // normalize and validate phone: accept only plausible numbers
+    $phone_digits = preg_replace('/\D+/', '', $phone);
+    if ($phone !== '') {
+        if (strpos($phone, '+') === 0) {
+            // international: require at least 7 digits
+            if (strlen($phone_digits) < 7) $phone = '';
+        } else {
+            // local: require at least 9 digits to avoid IDs/short codes
+            if (strlen($phone_digits) < 9) $phone = '';
+        }
+    }
     return [trim($name), trim($phone), trim($email)];
 }
 
@@ -129,8 +145,12 @@ foreach ($files as $file) {
         $html = fetch_html($url, $retry);
         if ($html === false) { if ($verbose) echo " failed to fetch $url\n"; continue; }
         list($name, $phone, $email) = extract_detail($html);
+        // skip entries with no usable contact (both phone and email empty)
+        if (trim($phone) === '' && trim($email) === '') {
+            if ($verbose) echo " no contact, skipping\n";
+            continue;
+        }
         $key = $name . '|' . $phone . '|' . $email;
-        if ($key === '||') continue;
         if (isset($seen[$key])) { if ($verbose) echo " duplicate, skipping\n"; continue; }
         $seen[$key] = true;
         fwrite($fh, implode(';', [$name, $phone, $email]) . "\n");
