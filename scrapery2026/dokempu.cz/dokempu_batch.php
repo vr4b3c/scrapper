@@ -7,7 +7,7 @@ if (php_sapi_name() !== 'cli') {
     exit(1);
 }
 
-$opts = getopt('', ['indir::', 'outdir::', 'delay-min::', 'delay-max::', 'retry::', 'force', 'verbose']);
+$opts = getopt('', ['indir::', 'outdir::', 'file::', 'delay-min::', 'delay-max::', 'retry::', 'force', 'verbose']);
 $indir = $opts['indir'] ?? sys_get_temp_dir() . '/dokempu_cat_urls';
 $outdir = $opts['outdir'] ?? 'scrapery2026/dokempu.cz/files';
 $delayMin = intval($opts['delay-min'] ?? 100);
@@ -18,7 +18,7 @@ $verbose = isset($opts['verbose']);
 
 if (!is_dir($indir)) {
     echo "Input directory not found: $indir\n";
-    echo "Usage: php dokempu_batch.php --indir=/path/to/urls --outdir=/path/to/csvs [--delay-min=100] [--delay-max=300] [--retry=2] [--force] [--verbose]\n";
+    echo "Usage: php dokempu_batch.php --indir=/path/to/urls --outdir=/path/to/csvs --file=FILE_OR_PATH (optional) [--delay-min=100] [--delay-max=300] [--retry=2] [--force] [--verbose]\n";
     exit(1);
 }
 
@@ -120,7 +120,22 @@ function extract_detail($html) {
     return [trim($name), trim($phone), trim($email)];
 }
 
-$files = glob(rtrim($indir, '/') . '/*_urls.txt');
+// Support single-file processing via --file (absolute path, path relative to cwd, or filename inside --indir)
+$fileOpt = $opts['file'] ?? null;
+$files = [];
+if ($fileOpt) {
+    $candidates = [$fileOpt, rtrim($indir, '/') . '/' . $fileOpt];
+    if (!preg_match('/_urls\.txt$/', $fileOpt)) {
+        $candidates[] = rtrim($indir, '/') . '/' . $fileOpt . '_urls.txt';
+    }
+    $found = false;
+    foreach ($candidates as $c) {
+        if (file_exists($c)) { $files[] = $c; $found = true; break; }
+    }
+    if (!$found) { echo "File not found: $fileOpt\n"; exit(1); }
+} else {
+    $files = glob(rtrim($indir, '/') . '/*_urls.txt');
+}
 if (!$files) {
     echo "No *_urls.txt files in $indir\n";
     exit(0);
