@@ -1,0 +1,16 @@
+{
+  "name": "dokempu.cz",
+  "version": "1.0.0",
+  "description": "Directory contains the minimal, current tools to generate candidate detail URLs and to extract details:",
+  "main": "render_and_extract.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "puppeteer": "^24.35.0"
+  }
+}
