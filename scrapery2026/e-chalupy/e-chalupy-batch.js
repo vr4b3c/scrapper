@@ -374,6 +374,7 @@ async function main(){
       const cat = fname.replace('e_chalupy_candidates_','').replace('.csv','');
       const inPath = path.join(candidatesDir, fname);
       let urls = gatherUrlsFromFileOrArg(inPath, startIdx);
+      if(isFinite(limit)) urls = urls.slice(0, limit);
       const catSlugSanitized = (cat||'cat').replace(/[\/\?=&]/g,'_').replace(/-/g,'_');
       const outPath = path.join(candidatesDir, `echalupy_${catSlugSanitized}.csv`);
       ensureCsvHeader(outPath, 'Name;Phone;Email\n');
@@ -424,14 +425,15 @@ async function main(){
   }
 
   // single-file mode
-  const urls = gatherUrlsFromFileOrArg(input, startIdx);
+  let urls = gatherUrlsFromFileOrArg(input, startIdx);
   if(!urls || urls.length===0){
     console.error('No URLs found. Pass a URL or a file path, or ensure', DEFAULT_INPUT, 'exists.');
     process.exit(1);
   }
-
-  // apply 1-based start index for single-file mode
+  // apply 1-based start index for single-file mode (gatherUrlsFromFileOrArg already slices,
+  // but keep this as a safety) and respect --limit
   try{ const s = Math.max(1, parseInt(startIdx,10)||1); urls = urls.slice(Math.max(0, s-1)); }catch(e){}
+  if(isFinite(limit)) urls = urls.slice(0, limit);
 
   // Determine output filename and header. If input looks like a candidates file
   // with a category slug (e_chalupy_candidates_<slug>.csv) then write a per-category
