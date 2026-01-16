@@ -373,7 +373,8 @@ async function main(){
     for(const fname of candidateFiles){
       const cat = fname.replace('e_chalupy_candidates_','').replace('.csv','');
       const inPath = path.join(candidatesDir, fname);
-      let urls = gatherUrlsFromFileOrArg(inPath, startIdx);
+      let urls = gatherUrlsFromFileOrArg(inPath);
+      try{ const s = Math.max(1, parseInt(startIdx,10)||1); urls = urls.slice(Math.max(0, s-1)); }catch(e){}
       if(isFinite(limit)) urls = urls.slice(0, limit);
       const catSlugSanitized = (cat||'cat').replace(/[\/\?=&]/g,'_').replace(/-/g,'_');
       const outPath = path.join(candidatesDir, `echalupy_${catSlugSanitized}.csv`);
@@ -425,15 +426,18 @@ async function main(){
   }
 
   // single-file mode
-  let urls = gatherUrlsFromFileOrArg(input, startIdx);
+  let urls = gatherUrlsFromFileOrArg(input);
+  // apply 1-based start index for single-file mode
   if(!urls || urls.length===0){
     console.error('No URLs found. Pass a URL or a file path, or ensure', DEFAULT_INPUT, 'exists.');
     process.exit(1);
   }
-  // apply 1-based start index for single-file mode (gatherUrlsFromFileOrArg already slices,
-  // but keep this as a safety) and respect --limit
+  // apply 1-based start index for single-file mode and respect --limit
   try{ const s = Math.max(1, parseInt(startIdx,10)||1); urls = urls.slice(Math.max(0, s-1)); }catch(e){}
   if(isFinite(limit)) urls = urls.slice(0, limit);
+
+  // debug: report number of urls we will process
+  try{ console.log('[debug] urls to process:', Array.isArray(urls)?urls.length:0); if(Array.isArray(urls) && urls.length>0) console.log('[debug] first urls:', urls.slice(0,3)); }catch(e){}
 
   // Determine output filename and header. If input looks like a candidates file
   // with a category slug (e_chalupy_candidates_<slug>.csv) then write a per-category
