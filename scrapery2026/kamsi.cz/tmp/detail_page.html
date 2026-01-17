@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Apartmán u Mikešů - apartmán v Písku ,  Jižní Čechy</title>
+
+    <meta content="index,follow" name="robots">
+
+    
+    <script src="/mlift/assets/js/icon/grunticon.loader.js"></script>
+    <script>
+        grunticon(
+            [
+                "/mlift/assets/css/icons.min.css",
+                "/mlift/assets/css/icons-png.min.css",
+                "/mlift/assets/css/icons-png-bg.min.css"
+            ],
+            grunticon.svgLoadedCallback
+        );
+    </script>
+    <noscript><link href="/mlift/assets/css/icons-png-bg.min.css" rel="stylesheet"></noscript>
+
+    <script src="https://use.fontawesome.com/760fffb40e.js"></script>
+    <link rel="stylesheet" href="/mlift/assets/css/style.min.css?v=6">
+
+    <meta name="title" content="Apartmán u Mikešů - apartmán v Písku ,  Jižní Čechy">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="Apartmán u Mikešů - apartmán v Písku ,  Jižní Čechy" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="//www.kamsi.cz/edit/foto_kamsi/32/15650_velka.jpg" />
+
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+</head>
+    <body>
+
+<!-- HEADER -->
+<header class="subpage-header ">
+            <!-- cookies lista -->
+        <div class="window-cookies" id="js-cookies">
+            <p>Tato stránka využívá cookies. Ne, to není žádné cukroví, ale soubory, díky nimž například nemusíte znova
+                zadávat stejné údaje, když už jste je jednou vyplnili.</p>
+            <a href="#" class="button button--small js-toggle" data-target="js-cookies" onclick="cookiesAccept()">
+                <span>Beru na vědomí a souhlasím</span>
+                <span>Ok</span>
+            </a>
+        </div>
+    
+    <!-- navbar -->
+    <div class="navbar navbar--subpage">
+        <div class="container">
+
+            <div class="flex-lg flex--align-center">
+            <!-- navbar header -->
+            <div class="navbar__header clearfix">
+                <a href="//kamsi.cz/" class="navbar__brand"><img src="/mlift/assets/images/logo-subpage.png" class="img-responsive" alt=""></a>
+
+                <ul class="navbar__tools list-inline">
+                    <li class="list-inline__item">
+                        <button type="button" class="navbar__toggle-btn button-hamburger" id="js-nav-toggle-btn"
+                                data-remodal-target="modal-mobile-nav">
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                        </button>
+                    </li>
+                                        <li class="list-inline__item"><a href="#"
+                                                     class="svg-icon svg-icon--default svg-icon--responsive svg-icon-search"
+                                                     data-grunticon-embed data-collapse-target="subHeaderSearch"></a>
+                    </li>
+                                    </ul>
+            </div>
+            <!-- navbar header -->
+
+            <!-- navbar search -->
+            <div class="navbar__search">
+                <form action="//kamsi.cz/search-form/" method="post">
+                    <div class="p-relative">
+                        <span class="form-ico form-ico--left svg-icon svg-icon--responsive svg-icon-search"
+                              data-grunticon-embed></span>
+                        <input type="text" name="s" onkeypress="formEnterSubmit(this.form)"
+                               class="form-control form-control--without-border form-control--ico-left address-autocomplete fire-search"
+                               placeholder="Zadejte místo, které hledáte">
+                        <input type="hidden" name="sql[locality][place][user_input]">
+                        <input type="hidden" name="sql[locality][place][autocomplete]">
+                        <input type="hidden" name="sql[locality][locality][city]">
+                        <input type="hidden" name="sql[locality][locality][zip_code]">
+                        <input type="hidden" name="sql[locality][locality][types]">
+                        <input type="hidden" name="sql[locality][location][lat]">
+                        <input type="hidden" name="sql[locality][location][lng]">
+                        <input type="hidden" name="sql[locality][viewport][south]">
+                        <input type="hidden" name="sql[locality][viewport][west]">
+                        <input type="hidden" name="sql[locality][viewport][north]">
+                        <input type="hidden" name="sql[locality][viewport][east]">
+                        <input type="submit" hidden class="submit">
+                    </div>
+                </form>
+            </div>
+            <!-- //navbar search -->
+
+            <!-- navbar collapse -->
+            <nav class="navbar__collapse" id="js-nav-collapse">
+                <ul class="navbar__nav list-inline margin-clear">
+                    <li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz" class="navbar__nav-item">Úvod</a></li>
+                    <li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/o-nas/text/39" class="navbar__nav-item">O nás</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/cenik/text/40" class="navbar__nav-item">Ceník</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/kontakty/text/44" class="navbar__nav-item">Kontakty</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/dokumenty/text/45" class="navbar__nav-item">Dokumenty</a></li>                </ul>
+
+                <ul class="navbar__nav list-inline margin-clear pull-lg-right-imp">
+                    <li class="list-inline__item navbar__nav-list-item"><a href="#" class="navbar__nav-item" data-remodal-target="modal-registration">Registrace</a></li>
+                    <li class="list-inline__item navbar__nav-list-item"><a href="#" class="navbar__nav-item" data-remodal-target="modal-login">Přihlášení</a></li>
+                </ul>
+            </nav>
+            <!-- //navbar collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- //navbar -->
+
+    </header>
+<!-- //HEADER -->
+
+<div class="content-page-wrap content-page-wrap--subpage subpage-accommodation-detail">
+    <div class="container">
+
+        <a href="/jizni-cechy/apartmany/" class="remodal-close"></a>
+    <!--    <ul class="list-inline list-breadcrumb">-->
+        <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="list-breadcrumb desktop-only"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz" title="Na úvodní stránku" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Home</span></a></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz/pisek/" title="Ubytování Písek (okres)" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Ubytování Písek (okres)</span></a></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz/jizni-cechy/" title="Ubytování Jižní Čechy (tur. region)" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Ubytování Jižní Čechy (tur. region)</span></a></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz/pisek/apartmany/" title="Apartmány v Písek (okres)" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Apartmány v Písek (okres)</span></a></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz/jizni-cechy/apartmany/" title="Apartmány Jižní Čechy (tur. region)" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Apartmány Jižní Čechy (tur. region)</span></a></li><li class="list-breadcrumb__item"><span><strong>Apartmán u Mikešů</strong></span></li></ul><!--    </ul>-->
+
+    <div class="content-box">
+        <div class="row">
+            <div class="col-xmd-6 pull-xmd-right-imp">
+                <div class="gallery">
+                    <ul class="list-unstyled" id="js-gallery-carousel">
+                                                <li class="gallery__list-item list-unstyled__item">
+                            <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg" data-imagelightbox="x">
+                                <img src="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg" alt="" class="gallery__list-item-in">
+                            </a>
+                        </li>
+                                                <li class="gallery__list-item list-unstyled__item">
+                            <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56045_15650.jpg" data-imagelightbox="x">
+                                <img src="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56045_15650.jpg" alt="" class="gallery__list-item-in">
+                            </a>
+                        </li>
+                                                <li class="gallery__list-item list-unstyled__item">
+                            <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56046_15650.jpg" data-imagelightbox="x">
+                                <img src="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56046_15650.jpg" alt="" class="gallery__list-item-in">
+                            </a>
+                        </li>
+                                                <li class="gallery__list-item list-unstyled__item">
+                            <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56047_15650.jpg" data-imagelightbox="x">
+                                <img src="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56047_15650.jpg" alt="" class="gallery__list-item-in">
+                            </a>
+                        </li>
+                                                <li class="gallery__list-item list-unstyled__item">
+                            <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56048_15650.jpg" data-imagelightbox="x">
+                                <img src="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56048_15650.jpg" alt="" class="gallery__list-item-in">
+                            </a>
+                        </li>
+                                            </ul>
+
+                    <ul class="list-unstyled" id="js-gallery-thumb-carousel">
+                                                    <li class="gallery__thumb-item list-unstyled__item">
+                                <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg" data-imagelightbox="y" class="gallery__thumb-item-in">
+                                    <img data-lazy="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg" alt="" class="img-responsive gallery__thumb-item-in-image">
+                                </a>
+                            </li>
+                                                    <li class="gallery__thumb-item list-unstyled__item">
+                                <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56045_15650.jpg" data-imagelightbox="y" class="gallery__thumb-item-in">
+                                    <img data-lazy="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56045_15650.jpg" alt="" class="img-responsive gallery__thumb-item-in-image">
+                                </a>
+                            </li>
+                                                    <li class="gallery__thumb-item list-unstyled__item">
+                                <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56046_15650.jpg" data-imagelightbox="y" class="gallery__thumb-item-in">
+                                    <img data-lazy="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56046_15650.jpg" alt="" class="img-responsive gallery__thumb-item-in-image">
+                                </a>
+                            </li>
+                                                    <li class="gallery__thumb-item list-unstyled__item">
+                                <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56047_15650.jpg" data-imagelightbox="y" class="gallery__thumb-item-in">
+                                    <img data-lazy="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56047_15650.jpg" alt="" class="img-responsive gallery__thumb-item-in-image">
+                                </a>
+                            </li>
+                                                    <li class="gallery__thumb-item list-unstyled__item">
+                                <a href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56048_15650.jpg" data-imagelightbox="y" class="gallery__thumb-item-in">
+                                    <img data-lazy="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56048_15650.jpg" alt="" class="img-responsive gallery__thumb-item-in-image">
+                                </a>
+                            </li>
+                                            </ul>
+
+                                            <p class="txt-right">Zobrazit <a class="txt-strong txt-decoration-none" data-imagelightbox="y" href="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg">všechny fotografie (5)</a></p>
+                                    </div>
+            </div>
+            <div class="col-xmd-6 pull-xmd-left-imp">
+                <h1>Apartmán u Mikešů</h1>
+                <ul class="list-inline">
+                    <li class="list-inline__item list-inline__item--big">
+                        <div class="tags">
+                            <span class="tags__title tags__title--small">Cena od</span>
+                            <span>650.00 Kč apartmán/noc</span>
+                        </div>
+                    </li>
+                    <li class="list-inline__item list-inline__item--big">Pokojů: 2</li>
+                    <li class="list-inline__item list-inline__item--big">Osob: 4</li>
+                </ul>
+                <br><br>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table--small table--clear">
+                            <tbody>
+                            <tr>
+                                <td>Adresa, ulice</td>
+                                <td class="txt-dark txt-right txt-md-left">Líšnice u Milevska 83</td>
+                            </tr>
+                            <tr>
+                                <td>Obec v regionu</td>
+                                <td class="txt-dark txt-right txt-md-left">Milevsko, Písek</td>
+                            </tr>
+                            <tr>
+                                                                <td>Typ ubytování</td>
+                                <td class="txt-dark txt-right txt-md-left">apartmány, ubytování v soukromí</td>
+                            </tr>
+
+
+                                                        <tr>
+                                <td>Strava</td>
+                                <td class="txt-dark txt-right txt-md-left">bez stravy, snídaně</td>
+                            </tr>
+                                                        </tbody>
+                        </table>
+
+                                                    <div class="content-box margin-b-0-imp">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h3>Charakteristika</h3>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">cyklistika, turistika</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">hrady, zámky</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">levné ubytování</li></ul></div>                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <div class="l_accommodation-detail-wrap" id="js-toggle-content">
+            <div class="row">
+                <div class="col-xmd-6">
+                    <div class="content-box">
+                        <h3>Popis</h3>
+                        <p class="txt-justify">Nabízíme  příležitostný krátkodobý pronájem apartmánu v našem rodinného domu (celé 1.patro, samostatný vchod) v obci Líšnice u Milevska. Hosté mají k dispozici dva samostatné pokoje, obytnou halu -WiFi přípojkou, a kuchyňským koutem (lednička, mikrovlnka, rychlovarná konvice), koupelnu a WC. Okolo domku je udržovaná zahrada s ohništěm a posezením,kde se i parkuje. 
+Kola či motocykl si uschováte v uzamykatelné garáži majitele.
+Zvířátka k nám,prosím,nevozte.
+Provoz :duben-září
+Kapacita 1-4 osoby
+Min.počet nocí :2
+Cena:
+1 osoba 650 Kč/noc
+2 osoby 1000 Kč/noc
+3 osoby 1200 Kč/noc
+4 osoby 1300 Kč/noc
+Děti do 15 let -sleva po domluvě.
+
+</p>
+                    </div>
+                                        <div class="content-box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Vybavení pokoje</h3>
+                            </div>
+                            <div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">internetová přípojka</li><li class="list-unstyled__item">kuchyňský kout</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">lednice</li><li class="list-unstyled__item">mikrovlnná trouba</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">sociální zařízení WC, sprcha</li></ul></div>                        </div>
+                    </div>
+                    
+                                        <div class="content-box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Vybavení objektu</h3>
+                            </div>
+                            <div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">kuchyňský kout</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">úschovna kol</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">zahrada</li></ul></div>                        </div>
+                    </div>
+                    
+                                        <div class="content-box">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Sportovní možnosti</h3>
+                            </div>
+                            <div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">cyklotrasy</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">přírodní koupaliště</li></ul></div><div class="col-xs-6 col-sm-4"><ul class="list-unstyled"><li class="list-unstyled__item">rybolov</li></ul></div>                        </div>
+                    </div>
+                    
+                    <!--                    <div class="content-box">-->
+<!--                        <h3>Ceník ubytování</h3>-->
+<!--                        <div class="table-responsive">-->
+<!--                            <table class="table table--small table--clear">-->
+<!--                                <thead>-->
+<!--                                <tr>-->
+<!--                                    <th>Pokoj</th>-->
+<!--                                    <th>Jaro</th>-->
+<!--                                    <th>Léto</th>-->
+<!--                                    <th>Podzim</th>-->
+<!--                                    <th>Zima</th>-->
+<!--                                    <th>Silvestr</th>-->
+<!--                                </tr>-->
+<!--                                </thead>-->
+<!--                                <tbody>-->
+<!--                                <tr>-->
+<!--                                    <td class="txt-dark">2 lůžák</td>-->
+<!--                                    <td>69 - 86 €</td>-->
+<!--                                    <td>69 - 86 €</td>-->
+<!--                                    <td>69 - 86 €</td>-->
+<!--                                    <td>69 - 86 €</td>-->
+<!--                                    <td>69 - 86 €</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="txt-dark">4 lůžák</td>-->
+<!--                                    <td>79 - 139 €</td>-->
+<!--                                    <td>79 - 139 €</td>-->
+<!--                                    <td>79 - 139 €</td>-->
+<!--                                    <td>79 - 139 €</td>-->
+<!--                                    <td>79 - 139 €</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="txt-dark">Apartmán</td>-->
+<!--                                    <td>79 - 99 €</td>-->
+<!--                                    <td>79 - 99 €</td>-->
+<!--                                    <td>79 - 99 €</td>-->
+<!--                                    <td>79 - 99 €</td>-->
+<!--                                    <td>79 - 99 €</td>-->
+<!--                                </tr>-->
+<!--                                </tbody>-->
+<!--                            </table>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                                    </div>
+                <div class="col-xmd-6">
+                    <div class="content-box" id="js-toggle-content-visible-start">
+                        <h2>Dotaz na ubytování</h2>
+                        <div class="row">
+                            <form action="/mlift/services/save_form.php" method="post" class="async-form">
+                                <input name="form[form_type]" type="hidden" value="dotaz">
+                                <input name="form[accommodation_id]" type="hidden" value="15650">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <input name="form[jmeno]" type="text" class="form-control" placeholder="Jméno"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <input name="form[prijmeni]" type="text" class="form-control" placeholder="Příjmení"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="form[telefon]" type="text" class="form-control" placeholder="Zde zadejte svůj telefon"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="form[email]" type="text" class="form-control" placeholder="Zde zadejte svůj email"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <textarea name="form[dotaz]" id="" cols="30" rows="10" class="form-control" placeholder="Dotaz na ubytovávajícího"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="error-container"></div>
+
+                                            <div class="flex-sm flex--row-reverse-sm">
+                                                <div class="flex__col-fullwidth-sm padding-b-20 padding-b-clear-sm padding-l-10-sm">
+                                                    <div class="checkbox checkbox--pretty margin-t-clear-imp margin-b-clear-imp">
+                                                        <input type="checkbox" id="checkbox1" class="agreement">
+                                                        <label for="checkbox1">
+                                                            <div class="checkbox__fake checkbox__fake--primary"><span class="checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                                            <span>Souhlas s ochranou <a href="http://kamsi.cz/dokumenty/text/46" target="_blank">osobnich udaju</a></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox checkbox--pretty margin-t-clear-imp margin-b-clear-imp">
+                                                        <input type="checkbox" id="checkbox2">
+                                                        <label for="checkbox2">
+                                                            <div class="checkbox__fake checkbox__fake--primary"><span class="checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                                            <span>Souhlas se zasilam <a href="http://kamsi.cz/dokumenty/text/51 " target="_blank">podobnych ubytovani</a></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div><input type="submit" name="submit" value="Odeslat dotaz" class="button button--primary"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <h2>Kontaktní údaje</h2>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <ul class="list-unstyled margin-clear">
+                                            <li class="list-unstyled__item">tel:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <ul class="list-unstyled">
+                                            <li class="list-unstyled__item txt-strong"><a class='no-link-styles hidden-phone-number' href='#' data-phone='+420382581495' data-accommodation-id='' onclick='return showPhoneNumber(this);'><span>[Zobrazit kontakt]</span></a></li><li class="list-unstyled__item txt-strong"><a class='no-link-styles hidden-phone-number' href='#' data-phone='+420604345934' data-accommodation-id='' onclick='return showPhoneNumber(this);'><span>[Zobrazit kontakt]</span></a></li>                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <ul class="list-unstyled margin-clear">
+                                            <li class="list-unstyled__item">adresa:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <ul class="list-unstyled">
+                                            <li class="list-unstyled__item txt-strong">Líšnice u Milevska 83</li>
+                                            <li class="list-unstyled__item txt-strong">Milevsko, Písek</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <ul class="list-unstyled margin-clear hide show-sm">
+                                            <li class="list-unstyled__item">email:</li>
+                                            <li class="list-unstyled__item">www:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <ul class="list-unstyled">
+                                            <li class="list-unstyled__item"><a href="mailto:mikesovi.ubytovani@seznam.cz">mikesovi.ubytovani@seznam.cz</a></li>
+                                                                                            <li class="list-unstyled__item"><span class='not-a-link' data-href='https://www.na-jihu.cz/mikesova' data-class='' data-target='_blank'>www.na-jihu.cz/mikesova</span></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <ul class="list-unstyled margin-clear">
+                                            <li class="list-unstyled__item">gps:</li>
+                                                                                            <li class="list-unstyled__item">kontakt:</li>
+                                                                                    </ul>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <ul class="list-unstyled">
+                                            <li class="list-unstyled__item txt-strong">49.4509, 14.36</li>
+                                                                                            <li class="list-unstyled__item txt-strong">Dagmar Mikešová</li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="js-toggle-content-visible-end"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 txt-center">
+                <div class="button button--primary button--small" id="js-toggle-content-button">Zobrazit více</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="map" id="js-detail-map"></div>
+<script>
+    function getMarkers()
+    {
+        return [
+            {advert_id:15650,lat:49.4509,lng:14.36,active:1}        ]
+    }
+</script></div>
+
+<!-- LOGIN MODAL -->
+<div class="remodal" data-remodal-id="modal-login" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content remodal-content--white">
+        <div class="content-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-xmd-8 col-xmd-push-2">
+                        <h1 class="font-w-light font-color-white txt-left">Přihlásit se</h1>
+                    </div>
+                    <div class="col-sm-12 col-xmd-8 col-xmd-push-2">
+                        <form action="/mlift/services/save_form.php" method="post" class="async-form">
+                            <input name="form[form_type]" type="hidden" value="login">
+                            <div class="form-group">  <div class="p-relative form-group-div">
+                                <input name="form[username]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Přihlašovací jméno" onchange="isFocus(this)">
+                                <label for="form[username]" class="form-control--label">Přihlašovací jméno</label>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative form-group-div">
+                                <input name="form[password]" type="password" class="form-control form-control--label--input form-control--white" placeholder="Heslo" onchange="isFocus(this)">
+                                <label for="form[password]" class="form-control--label">Heslo</label>
+                            </div>
+                            </div>
+                            <div class="error-container"></div>
+                            <div class="form-group txt-left">
+                                <div class="flex-md flex--align-center">
+                                    <div><input type="submit" class="button button--primary" value="Přihlásit se"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //LOGIN MODAL -->
+
+<!-- REGISTRATION MODAL -->
+<div class="remodal" data-remodal-id="modal-registration" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content remodal-content--white">
+        <div class="content-box">
+            <div class="container">
+                <form action="/mlift/services/save_form.php" method="post" class="async-form">
+                    <input name="form[form_type]" type="hidden" value="registrace">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="font-w-light font-color-white txt-left">Registrace</h1>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <div class="form-control-select-svg-div svg-icon svg-icon--responsive svg-icon-chevron-left" data-grunticon-embed></div>
+<!--                                    <input name="form[stat]" type="text" class="form-control form-control--white" placeholder="Stát">-->
+                                    <select name="form[stat]" class="form-control form-control-select form-control--white" onchange="isFocus(this)">
+                                        <option class="default-value">Vyberte stát</option>
+                                        <option value="263">Česká republika</option>
+                                        <option value="264">Slovensko</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[nazev_spolecnosti]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Název společnosti" onchange="isFocus(this)">
+                                    <label for="form[nazev_spolecnosti]" class="form-control--label">Název společnosti</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[jmeno_prijmeni]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Jméno a Příjmení" onchange="isFocus(this)">
+                                    <label for="form[jmeno_prijmeni]" class="form-control--label">Jméno a Příjmení</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[ulice]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Adresa (Ulice + ČP)" onchange="isFocus(this)">
+                                            <label for="form[ulice]" class="form-control--label">Adresa (Ulice + ČP)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[psc]" type="text" class="form-control form-control--label--input form-control--white" placeholder="PSČ" onchange="isFocus(this)">
+                                            <label for="form[psc]" class="form-control--label">PSČ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[mesto]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Město" onchange="isFocus(this)">
+                                    <label for="form[mesto]" class="form-control--label">Město</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[ico]" type="text" class="form-control form-control--label--input form-control--white" placeholder="IČO" onchange="isFocus(this)">
+                                            <label for="form[ico]" class="form-control--label">IČO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[dic]" type="text" class="form-control form-control--label--input form-control--white" placeholder="DIČ" onchange="isFocus(this)">
+                                            <label for="form[dic]" class="form-control--label">DIČ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="margin-t-10-md margin-b-clear-md">Pro slovenské subjekty</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[sk_ico]" type="text" class="form-control form-control--label--input form-control--white" placeholder="IČO" onchange="isFocus(this)">
+                                            <label for="form[sk_ico]" class="form-control--label">IČO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[telefon][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Telefon" onchange="isFocus(this)">
+                                    <label for="form[telefon][0]" class="form-control--label">Telefon</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[fax][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Fax" onchange="isFocus(this)">
+                                    <label for="form[fax][0]" class="form-control--label">Fax</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[mobil][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Mobil" onchange="isFocus(this)">
+                                    <label for="form[mobil][0]" class="form-control--label">Mobil</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[email2]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Email" onchange="isFocus(this)">
+                                    <label for="form[email2]" class="form-control--label">Email</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Přihlašovací údaje</p>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[email]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Přihlašovací jméno" onchange="isFocus(this)">
+                                    <label for="form[email]" class="form-control--label">Přihlašovací jméno</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[heslo]" type="password" class="form-control form-control--label--input form-control--white" placeholder="Heslo" onchange="isFocus(this)">
+                                    <label for="form[heslo]" class="form-control--label">Heslo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-md flex--align-center-md">
+                    <div class="col-md-6">
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox999" name="form[agree][personal_information]" class="agreement">
+                            <label for="checbox999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím s <a href="http://kamsi.cz/dokumenty/text/48" target="_blank">obchodními podmínkami</a></span>
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox9999" name="form[agree][newsletter]" class="agreement">
+                            <label for="checbox9999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím s <a href="http://kamsi.cz/dokumenty/text/46" target="_blank">ochranou osobních údajů</a></span>
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox99999" name="form[agree][newsletter]">
+                            <label for="checbox99999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím se zasláním obch. sdělení</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 txt-left txt-md-right">
+                        <div class="flex-md">
+                            <div class="flex__col-fullwidth-md error-container"></div>
+                        </div>
+                        <div class="flex-md flex--align-center-md">
+                            <div class="flex__col-fullwidth-md margin-b-20 margin-b-clear-md margin-r-20-md"><a href="#" class="padding-right-20-md" data-remodal-target="modal-login">Již mám účet</a></div>
+                            <div><input type="submit" value="Registrovat se" class="button button--primary"></div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // REGISTRATION MODAL -->
+<footer class="footer  "><!-- FOOTER -->
+    <div class="container">
+        <div class="footer__content footer__content--border-top">
+            <div class="row">
+                <div class="col-md-12">
+                    <span>© 2015 <span class="footer__bold"><b>Kamsi.cz</b></span>, všechna práva vyhrazena</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-inline margin-clear">
+                        <li class="list-inline__item">Sqele s.r.o.</li>
+                        <li class="list-inline__item">IČO: 25046799</li>
+                        <li class="list-inline__item">DIČ: CZ25046799</li>
+                        <li class="list-inline__item">Pražská 988 430 01 Chomutov</li>
+                        <li class="list-inline__item">+420 102 301 320</li>
+                        <li class="list-inline__item"><a href="mailto:info@kamsi.cz">info@kamsi.cz</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 txt-md-right">
+                    <span>Made by Mountain Lift</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!-- //FOOTER -->
+<!-- MOBILE NAV MODAL -->
+<div class="remodal" data-remodal-id="modal-mobile-nav" data-remodal-options="closeOnOutsideClick: false, hashTracking: false" id="js-remodal-mobile-nav">
+    <button data-remodal-action="close" class="remodal-close" id="remodalMobileNavClose"></button>
+    <div class="navbar__mobile-nav"></div>
+</div>
+<!-- //MOBILE NAV MODAL -->
+
+    <script type="text/javascript" src="/www/js/libs/01-markerclusterer.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+
+    <script type="text/javascript" src="/mlift/assets/js/main.min.js?v=4"></script>
+
+    <script type="text/javascript" src="/www/js/libs/00-jquery-ajaxForm.js"></script>
+
+    <script type="text/javascript" src="/www/js/template.js?v=6"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpTp1IVCeLoaIGRqEB_py4FvdBeZcL2so&libraries=places&callback=googleMapsInit"></script>
+
+        <script>
+        var autocomplete = {"tr-737":"Adr\u0161pach, Broumovsko, Kladsk\u00e9 pomez\u00ed","tr-728":"Beskydy a Vala\u0161sko","tr-858":"B\u00edl\u00e9 Karpaty","tr-856":"Bratislava a okol\u00ed","tr-725":"Brno a okol\u00ed","tr-732":"Chodsko","tr-879":"\u010cergov","tr-735":"\u010cesk\u00e9 st\u0159edoho\u0159\u00ed a \u017datecko","tr-706":"\u010cesk\u00e9 \u0160v\u00fdcarsko, D\u011b\u010d\u00ednsko","tr-992":"\u010cesk\u00fd kras a Brdy","tr-710":"\u010cesk\u00fd r\u00e1j","tr-733":"Hradecko a Podzvi\u010d\u00ednsko","tr-997":"Hron, Pohron\u00ed","tr-859":"Javorn\u00edky, Kysuce","tr-723":"Jesen\u00edky","tr-707":"Jizersk\u00e9 hory, Fr\u00fddlantsko a Liberecko","tr-721":"Ji\u017en\u00ed \u010cechy","tr-996":"Ji\u017en\u00ed Morava -  Podyj\u00ed, Lednicko Valtick\u00fd are\u00e1l, B\u0159eclav, P\u00e1lava","tr-726":"Ji\u017en\u00ed Morava - Znojemsko","tr-712":"Karlovy Vary a z\u00e1pado\u010desk\u00e9 l\u00e1zn\u011b","tr-877":"Ko\u0161ice a okol\u00ed","tr-713":"K\u0159ivokl\u00e1tsko a Rakovnicko","tr-708":"Krkono\u0161e a Podkrkono\u0161\u00ed","tr-709":"Kru\u0161n\u00e9 hory","tr-994":"Kutnohorsko","tr-870":"Liptov, Liptovsk\u00e1 Mara","tr-734":"Lu\u017eick\u00e9 hory","tr-736":"M\u00e1ch\u016fv kraj, Koko\u0159\u00ednsko","tr-866":"Mal\u00e1 Fatra, \u017diar","tr-855":"Mal\u00e9 Karpaty","tr-731":"Moravsk\u00fd kras","tr-881":"N\u00edzk\u00e9 Beskydy, Bukovsk\u00e9 Vrchy","tr-869":"N\u00edzk\u00e9 Tatry","tr-880":"Ondavsk\u00e1 Vrchovina","tr-865":"Orava","tr-711":"Orlick\u00e9 hory a podorlicko","tr-717":"Orl\u00edk a Slapy","tr-995":"Pardubicko","tr-872":"Pieniny, Levo\u010dsk\u00e9 Vrchy, Spi\u0161sk\u00e1 Magura","tr-716":"Plze\u0148sko, Plze\u0148 a okol\u00ed","tr-864":"Podunajsk\u00e1 N\u00ed\u017eina","tr-876":"Poiplie, Juhoslovensk\u00e1 kotlina","tr-740":"Polab\u00ed, M\u011blnicko","tr-868":"Po\u013eana, Podpo\u013eanie","tr-739":"Pood\u0159\u00ed","tr-857":"Pov\u00e1\u017e\u00ed, Pova\u017esk\u00fd Inovec","tr-714":"Praha a okol\u00ed","tr-993":"S\u00e1zava a Pos\u00e1zav\u00ed","tr-878":"Sl\u00e1nsk\u00e9 Vrchy","tr-738":"Slezsko","tr-727":"Slov\u00e1cko a Zl\u00ednsko","tr-875":"Slovensk\u00e9 Rudoho\u0159\u00ed (Stolick\u00e9 vrchy, Volovsk\u00e9 Vrchy)","tr-874":"Slovensk\u00fd Kras","tr-873":"Slovensk\u00fd Raj","tr-860":"Str\u00e1\u017eovsk\u00e9 vrchy","tr-724":"St\u0159edn\u00ed Morava, Han\u00e1","tr-882":"\u0160\u00edrava, Vihorlat, Horn\u00ed Zempl\u00edn","tr-863":"\u0160tiavnick\u00e9 Vrchy","tr-718":"\u0160umava a \u010ceskokrumlovsko","tr-861":"Tribe\u010d","tr-867":"Velk\u00e1 Fatra","tr-862":"Vt\u00e1\u010dnik","tr-715":"V\u00fdchodn\u00ed \u010cechy","tr-883":"V\u00fdchodoslovensk\u00e1 n\u00ed\u017eina, Doln\u00ed Zempl\u00edn","tr-722":"Vyso\u010dina","tr-871":"Vysok\u00e9 Tatry","tr-854":"Z\u00e1ho\u0159\u00ed, Z\u00e1horsk\u00e1 n\u00ed\u017eina","ok-79":"B\u00e1novce nad Bebravou","ok-80":"Bansk\u00e1 Bystrica","ok-81":"Bansk\u00e1 \u0160tiavnica","ok-82":"Bardejov","ok-1":"Bene\u0161ov","ok-2":"Beroun","ok-3":"Blansko","ok-83":"Bratislava","ok-7":"B\u0159eclav","ok-88":"Brezno","ok-4":"Brno","ok-5":"Brno-venkov","ok-6":"Brunt\u00e1l","ok-89":"Byt\u010da","ok-8":"Cheb","ok-9":"Chomutov","ok-10":"Chrudim","ok-90":"\u010cadca","ok-73":"\u010cesk\u00e1 L\u00edpa","ok-72":"\u010cesk\u00e9 Bud\u011bjovice","ok-74":"\u010cesk\u00fd Krumlov","ok-12":"D\u011b\u010d\u00edn","ok-91":"Detva","ok-92":"Doln\u00fd Kub\u00edn","ok-11":"Doma\u017elice","ok-93":"Dunajsk\u00e1 Streda","ok-13":"Fr\u00fddek-M\u00edstek","ok-94":"Galanta","ok-95":"Gelnica","ok-14":"Havl\u00ed\u010dk\u016fv Brod","ok-96":"Hlohovec","ok-16":"Hodon\u00edn","ok-17":"Hradec Kr\u00e1lov\u00e9","ok-97":"Humenn\u00e9","ok-98":"Ilava","ok-18":"Jablonec nad Nisou","ok-19":"Jesen\u00edk","ok-22":"Ji\u010d\u00edn","ok-20":"Jihlava","ok-21":"Jind\u0159ich\u016fv Hradec","ok-23":"Karlovy Vary","ok-24":"Karvin\u00e1","ok-99":"Ke\u017emarok","ok-25":"Kladno","ok-26":"Klatovy","ok-27":"Kol\u00edn","ok-100":"Kom\u00e1rno","ok-101":"Ko\u0161ice","ok-105":"Ko\u0161ice-okolie","ok-28":"Krom\u011b\u0159\u00ed\u017e","ok-106":"Krupina","ok-29":"Kutn\u00e1 Hora","ok-107":"Kysuck\u00e9 Nov\u00e9 Mesto","ok-108":"Levice","ok-109":"Levo\u010da","ok-30":"Liberec","ok-110":"Liptovsk\u00fd Mikul\u00e1\u0161","ok-31":"Litom\u011b\u0159ice","ok-32":"Louny","ok-111":"Lu\u010denec","ok-112":"Malacky","ok-113":"Martin","ok-114":"Medzilaborce","ok-35":"M\u011bln\u00edk","ok-115":"Michalovce","ok-33":"Mlad\u00e1 Boleslav","ok-34":"Most","ok-116":"Myjava","ok-38":"N\u00e1chod","ok-117":"N\u00e1mestovo","ok-118":"Nitra","ok-119":"Nov\u00e9 Mesto n.V\u00e1hom","ok-120":"Nov\u00e9 Z\u00e1mky","ok-36":"Nov\u00fd Ji\u010d\u00edn","ok-37":"Nymburk","ok-39":"Olomouc","ok-40":"Opava","ok-41":"Ostrava","ok-42":"Pardubice","ok-121":"Partiz\u00e1nske","ok-43":"Pelh\u0159imov","ok-122":"Pezinok","ok-123":"Pie\u0161\u0165any","ok-51":"P\u00edsek","ok-45":"Plze\u0148","ok-44":"Plze\u0148-jih","ok-46":"Plze\u0148-sever","ok-124":"Polt\u00e1r","ok-125":"Poprad","ok-126":"Pova\u017esk\u00e1 Bystrica","ok-47":"Prachatice","ok-15":"Praha","ok-48":"Praha-v\u00fdchod","ok-49":"Praha-z\u00e1pad","ok-52":"P\u0159erov","ok-127":"Pre\u0161ov","ok-53":"P\u0159\u00edbram","ok-128":"Prievidza","ok-50":"Prost\u011bjov","ok-129":"P\u00fachov","ok-54":"Rakovn\u00edk","ok-130":"Rev\u00faca","ok-131":"Rimavsk\u00e1 Sobota","ok-55":"Rokycany","ok-132":"Ro\u017e\u0148ava","ok-133":"Ru\u017eomberok","ok-56":"Rychnov nad Kn\u011b\u017enou","ok-134":"Sabinov","ok-57":"Semily","ok-135":"Senec","ok-136":"Senica","ok-137":"Skalica","ok-138":"Snina","ok-139":"Sobrance","ok-58":"Sokolov","ok-140":"Spi\u0161sk\u00e1 Nov\u00e1 Ves","ok-141":"Star\u00e1 \u013dubov\u0148a","ok-59":"Strakonice","ok-142":"Stropkov","ok-143":"Svidn\u00edk","ok-60":"Svitavy","ok-144":"\u0160a\u013ea","ok-75":"\u0160umperk","ok-64":"T\u00e1bor","ok-61":"Tachov","ok-62":"Teplice","ok-145":"Topo\u013e\u010dany","ok-65":"T\u0159eb\u00ed\u010d","ok-146":"Trebi\u0161ov","ok-147":"Tren\u010d\u00edn","ok-148":"Trnava","ok-63":"Trutnov","ok-149":"Tur\u010diansk\u00e9 Teplice","ok-150":"Tvrdo\u0161\u00edn","ok-66":"Uhersk\u00e9 Hradi\u0161t\u011b","ok-76":"\u00dast\u00ed nad Labem","ok-77":"\u00dast\u00ed nad Orlic\u00ed","ok-151":"Ve\u013ek\u00fd Krt\u00ed\u0161","ok-152":"Vranov nad Top\u013eou","ok-67":"Vset\u00edn","ok-68":"Vy\u0161kov","ok-153":"Zlat\u00e9 Moravce","ok-69":"Zl\u00edn","ok-70":"Znojmo","ok-154":"Zvolen","ok-155":"\u017darnovica","ok-71":"\u017d\u010f\u00e1r nad S\u00e1zavou","ok-156":"\u017diar nad Hronom","ok-157":"\u017dilina"};
+    </script>
+
+    
+                <a href="http://www.toplist.cz/"><img src="https://toplist.cz/count.asp?id=854896" alt="TOPlist" width="0" height="0" /></a>
+
+
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-2445613-5', 'auto');
+                ga('send', 'pageview');
+            </script>
+        
+    </body>
+</html>

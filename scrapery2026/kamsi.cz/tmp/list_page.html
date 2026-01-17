@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Apartmány, k dispozici 100+ apartmánů k pronájmu od pěkných 220 korun za pobyt</title>
+
+    <meta content="noindex,follow" name="robots">
+
+    <link rel="canonical" href="http://kamsi.cz/apartmany/" />
+    <script src="/mlift/assets/js/icon/grunticon.loader.js"></script>
+    <script>
+        grunticon(
+            [
+                "/mlift/assets/css/icons.min.css",
+                "/mlift/assets/css/icons-png.min.css",
+                "/mlift/assets/css/icons-png-bg.min.css"
+            ],
+            grunticon.svgLoadedCallback
+        );
+    </script>
+    <noscript><link href="/mlift/assets/css/icons-png-bg.min.css" rel="stylesheet"></noscript>
+
+    <script src="https://use.fontawesome.com/760fffb40e.js"></script>
+    <link rel="stylesheet" href="/mlift/assets/css/style.min.css?v=6">
+
+    <meta name="title" content="Apartmány, k dispozici 100+ apartmánů k pronájmu od pěkných 220 korun za pobyt">
+    <meta name="description" content="Snažíte se vypátrat stylovou apartmán nebo hledáte pěkné apartmány na služební cestu? Zamluvte si z pestré nabídky - více než 100+ apartmánů za pěkných 220 korun za objekt, který Vám vážně bude splňovat Vaše potřeby. Na tomto místě poptáte široký nabídkový list apartmánů;) Provozovatelé apartmánů v našem seznamu Vám dají navíc moře ješte jiných cenných informací!">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="Apartmány, k dispozici 100+ apartmánů k pronájmu od pěkných 220 korun za pobyt" />
+    <meta property="og:description" content="Snažíte se vypátrat stylovou apartmán nebo hledáte pěkné apartmány na služební cestu? Zamluvte si z pestré nabídky - více než 100+ apartmánů za pěkných 220 korun za objekt, který Vám vážně bude splňovat Vaše potřeby. Na tomto místě poptáte široký nabídkový list apartmánů;) Provozovatelé apartmánů v našem seznamu Vám dají navíc moře ješte jiných cenných informací!" />
+    <meta property="og:image" content="" />
+
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+</head>
+    <body>
+<!-- HEADER -->
+<header class="subpage-header subpage-header--filter-bar">
+            <!-- cookies lista -->
+        <div class="window-cookies" id="js-cookies">
+            <p>Tato stránka využívá cookies. Ne, to není žádné cukroví, ale soubory, díky nimž například nemusíte znova
+                zadávat stejné údaje, když už jste je jednou vyplnili.</p>
+            <a href="#" class="button button--small js-toggle" data-target="js-cookies" onclick="cookiesAccept()">
+                <span>Beru na vědomí a souhlasím</span>
+                <span>Ok</span>
+            </a>
+        </div>
+    
+    <!-- navbar -->
+    <div class="navbar navbar--subpage">
+        <div class="container">
+
+            <div class="flex-lg flex--align-center">
+            <!-- navbar header -->
+            <div class="navbar__header clearfix">
+                <a href="//kamsi.cz/" class="navbar__brand"><img src="/mlift/assets/images/logo-subpage.png" class="img-responsive" alt=""></a>
+
+                <ul class="navbar__tools list-inline">
+                    <li class="list-inline__item">
+                        <button type="button" class="navbar__toggle-btn button-hamburger" id="js-nav-toggle-btn"
+                                data-remodal-target="modal-mobile-nav">
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                            <span class="button-hamburger__icon-bar button-hamburger__icon-bar--subpage"></span>
+                        </button>
+                    </li>
+                                    </ul>
+            </div>
+            <!-- navbar header -->
+
+            <!-- navbar search -->
+            <div class="navbar__search">
+                <form action="//kamsi.cz/search-form/" method="post">
+                    <div class="p-relative">
+                        <span class="form-ico form-ico--left svg-icon svg-icon--responsive svg-icon-search"
+                              data-grunticon-embed></span>
+                        <input type="text" name="s" onkeypress="formEnterSubmit(this.form)"
+                               class="form-control form-control--without-border form-control--ico-left address-autocomplete fire-search"
+                               placeholder="Zadejte místo, které hledáte">
+                        <input type="hidden" name="sql[locality][place][user_input]">
+                        <input type="hidden" name="sql[locality][place][autocomplete]">
+                        <input type="hidden" name="sql[locality][locality][city]">
+                        <input type="hidden" name="sql[locality][locality][zip_code]">
+                        <input type="hidden" name="sql[locality][locality][types]">
+                        <input type="hidden" name="sql[locality][location][lat]">
+                        <input type="hidden" name="sql[locality][location][lng]">
+                        <input type="hidden" name="sql[locality][viewport][south]">
+                        <input type="hidden" name="sql[locality][viewport][west]">
+                        <input type="hidden" name="sql[locality][viewport][north]">
+                        <input type="hidden" name="sql[locality][viewport][east]">
+                        <input type="submit" hidden class="submit">
+                    </div>
+                </form>
+            </div>
+            <!-- //navbar search -->
+
+            <!-- navbar collapse -->
+            <nav class="navbar__collapse" id="js-nav-collapse">
+                <ul class="navbar__nav list-inline margin-clear">
+                    <li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz" class="navbar__nav-item">Úvod</a></li>
+                    <li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/o-nas/text/39" class="navbar__nav-item">O nás</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/cenik/text/40" class="navbar__nav-item">Ceník</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/kontakty/text/44" class="navbar__nav-item">Kontakty</a></li><li class="list-inline__item navbar__nav-list-item"><a href="//kamsi.cz/dokumenty/text/45" class="navbar__nav-item">Dokumenty</a></li>                </ul>
+
+                <ul class="navbar__nav list-inline margin-clear pull-lg-right-imp">
+                    <li class="list-inline__item navbar__nav-list-item"><a href="#" class="navbar__nav-item" data-remodal-target="modal-registration">Registrace</a></li>
+                    <li class="list-inline__item navbar__nav-list-item"><a href="#" class="navbar__nav-item" data-remodal-target="modal-login">Přihlášení</a></li>
+                </ul>
+            </nav>
+            <!-- //navbar collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- //navbar -->
+
+        <!-- filter-bar -->
+    <div class="filter-bar" data-collapse-id="subHeaderFilter">
+        <div class="container">
+            <div class="filter-bar__table-wrap">
+
+<!--                <div class="filter-bar__box filter-bar__location">-->
+<!--                    <!-- TODO otestovat tento title -->
+<!--                    <h5 class="margin-clear">--><!--</h5>-->
+<!--                </div>-->
+
+                <div class="filter-bar__box filter-bar__options">
+                    <ul class="list-inline margin-clear" id="js-page-layout">
+                        <li class="list-inline__item">Zobrazit:</li>
+                        <li class="list-inline__item">
+                            <a href="#map" class="filter-bar__options-item js-page-layout" data-show="l-map">
+                                <span class="filter-bar__options-ico svg-icon km svg-icon--responsive svg-icon-places-on-maps"
+                                      data-grunticon-embed></span>
+                                Mapa
+                            </a>
+                        </li>
+                        <li class="list-inline__item">
+                            <a href="#listing" class="filter-bar__options-item" data-show="l-list">
+                                <span class="filter-bar__options-ico svg-icon km svg-icon--responsive svg-icon-tile-list"
+                                      data-grunticon-embed></span>
+                                Výpis
+                            </a>
+                        </li>
+                        <li class="list-inline__item">
+                            <a href="#map-listing" class="filter-bar__options-item filter-bar__options-item--active"
+                               data-show="l-map-list">
+                                <span class="filter-bar__options-ico svg-icon km svg-icon--responsive svg-icon-places-on-maps-list"
+                                      data-grunticon-embed></span>
+                                Mapa + Výpis
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-bar__box filter-bar__actions">
+                    <div class="filter-bar__sorting">
+                        <span class="filter-bar__sorting-title hide dis-inline-block-sm">Seřadit</span>
+                                                <select name="listing-sort" id="header-sort" class="filter-bar__sorting-list cookie-save">
+                            <option value="sort-default" selected>
+                                Výchozí řazení
+                            </option>
+                            <option value="sort-price" >
+                                Cena od nejlevnější
+                            </option>
+                            <option value="sort-price-max" >
+                                Cena od nejdražší
+                            </option>
+                            <option value="sort-added" >
+                                Nejnovější
+                            </option>
+                            <option value="sort-added-max" >
+                                Nejstarší
+                            </option>
+                        </select>
+                    </div>
+
+                <div class="filter-bar__box filter-bar__actions">
+                    <a href="#" class="filter-bar__actions-item" data-remodal-target="modal-filter">
+                        <span class="svg-icon svg-icon--responsive svg-icon--default svg-icon-cogwheel"
+                              data-grunticon-embed></span>
+                        <span class="hide dis-inline-block-sm">Rozšířené hledání</span>
+                    </a>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- header filter tools -->
+    </header>
+<!-- //HEADER -->
+<!-- CONTENT PAGE WRAP -->
+<div class="content-page-wrap content-page-wrap--filter-bar clearfix">
+
+    <!-- [layout] - accodomation list page wrap -->
+    <div class="l_accomodation-list-page-wrap" id="js-page-list-wrap">
+
+        <!-- map fullscreen -->
+        <div class="map-fullscreen">
+            <div class="map-fullscreen__in" id="js-list-map"></div>
+            <script>
+                
+                function getMarkers(){
+                    return JSON.parse('{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"accommodation_id":494},"geometry":{"type":"Point","coordinates":[15.0599000000000007304379323613829910755157470703125,50.71090000000000230784280574880540370941162109375]}},{"type":"Feature","properties":{"accommodation_id":1212},"geometry":{"type":"Point","coordinates":[16.2700999999999993406163412146270275115966796875,49.7137000000000028876456781290471553802490234375]}},{"type":"Feature","properties":{"accommodation_id":14260},"geometry":{"type":"Point","coordinates":[12.9215999999999997527311279554851353168487548828125,50.4131000000000000227373675443232059478759765625]}},{"type":"Feature","properties":{"accommodation_id":14606},"geometry":{"type":"Point","coordinates":[12.9946000000000001506350599811412394046783447265625,50.05680000000000262616595136933028697967529296875]}},{"type":"Feature","properties":{"accommodation_id":406},"geometry":{"type":"Point","coordinates":[13.2265999999999994685140336514450609683990478515625,49.15849999999999653255144949071109294891357421875]}},{"type":"Feature","properties":{"accommodation_id":4262},"geometry":{"type":"Point","coordinates":[13.556200000000000471800376544706523418426513671875,49.14289999999999736246536485850811004638671875]}},{"type":"Feature","properties":{"accommodation_id":8679},"geometry":{"type":"Point","coordinates":[14.8789999999999995594635038287378847599029541015625,48.90129999999999910187398199923336505889892578125]}},{"type":"Feature","properties":{"accommodation_id":4422},"geometry":{"type":"Point","coordinates":[13.9492999999999991445065461448393762111663818359375,48.7907000000000010686562745831906795501708984375]}},{"type":"Feature","properties":{"accommodation_id":4428},"geometry":{"type":"Point","coordinates":[14.52720000000000055706550483591854572296142578125,50.418599999999997862687450833618640899658203125]}},{"type":"Feature","properties":{"accommodation_id":4813},"geometry":{"type":"Point","coordinates":[15.594300000000000494537744089029729366302490234375,50.72800000000000153477230924181640148162841796875]}},{"type":"Feature","properties":{"accommodation_id":15248},"geometry":{"type":"Point","coordinates":[15.2135999999999995679900166578590869903564453125,50.58809999999999718056642450392246246337890625]}},{"type":"Feature","properties":{"accommodation_id":14389},"geometry":{"type":"Point","coordinates":[16.80160000000000053432813729159533977508544921875,50.1203000000000002955857780762016773223876953125]}},{"type":"Feature","properties":{"accommodation_id":15650},"geometry":{"type":"Point","coordinates":[14.3599999999999994315658113919198513031005859375,49.45089999999999719193510827608406543731689453125]}},{"type":"Feature","properties":{"accommodation_id":655},"geometry":{"type":"Point","coordinates":[15.2367000000000007986500349943526089191436767578125,50.58899999999999863575794734060764312744140625]}},{"type":"Feature","properties":{"accommodation_id":327},"geometry":{"type":"Point","coordinates":[15.733200000000000073896444519050419330596923828125,50.6938999999999992951416061259806156158447265625]}},{"type":"Feature","properties":{"accommodation_id":3629},"geometry":{"type":"Point","coordinates":[14.760300000000000864019966684281826019287109375,49.00619999999999976125764078460633754730224609375]}},{"type":"Feature","properties":{"accommodation_id":515},"geometry":{"type":"Point","coordinates":[16.952000000000001733724275254644453525543212890625,50.16550000000000153477230924181640148162841796875]}},{"type":"Feature","properties":{"accommodation_id":328},"geometry":{"type":"Point","coordinates":[15.909800000000000608224581810645759105682373046875,48.85719999999999885176293901167809963226318359375]}},{"type":"Feature","properties":{"accommodation_id":167},"geometry":{"type":"Point","coordinates":[12.7018000000000004234834705130197107791900634765625,49.9628000000000014324541552923619747161865234375]}},{"type":"Feature","properties":{"accommodation_id":856},"geometry":{"type":"Point","coordinates":[14.7022999999999992581933838664554059505462646484375,49.11619999999999919282345217652618885040283203125]}},{"type":"Feature","properties":{"accommodation_id":401},"geometry":{"type":"Point","coordinates":[17.130900000000000460431692772544920444488525390625,50.2272999999999996134647517465054988861083984375]}},{"type":"Feature","properties":{"accommodation_id":18986},"geometry":{"type":"Point","coordinates":[14.2172000000000000596855898038484156131744384765625,50.76950000000000073896444519050419330596923828125]}},{"type":"Feature","properties":{"accommodation_id":17817},"geometry":{"type":"Point","coordinates":[14.0129999999999999005240169935859739780426025390625,50.5424000000000006593836587853729724884033203125]}},{"type":"Feature","properties":{"accommodation_id":1011},"geometry":{"type":"Point","coordinates":[13.4687000000000001165290086646564304828643798828125,49.15509999999999735109668108634650707244873046875]}},{"type":"Feature","properties":{"accommodation_id":1612},"geometry":{"type":"Point","coordinates":[14.502700000000000812860889709554612636566162109375,50.85640000000000071622707764618098735809326171875]}},{"type":"Feature","properties":{"accommodation_id":19805},"geometry":{"type":"Point","coordinates":[12.8653999999999992809307514107786118984222412109375,49.401600000000001955413608811795711517333984375]}},{"type":"Feature","properties":{"accommodation_id":14673},"geometry":{"type":"Point","coordinates":[14.65429999999999921556081972084939479827880859375,50.56580000000000296722646453417837619781494140625]}},{"type":"Feature","properties":{"accommodation_id":7177},"geometry":{"type":"Point","coordinates":[17.446899999999999408828443847596645355224609375,50.10390000000000298996383207850158214569091796875]}},{"type":"Feature","properties":{"accommodation_id":3264},"geometry":{"type":"Point","coordinates":[12.701299999999999812416717759333550930023193359375,49.963200000000000500222085975110530853271484375]}},{"type":"Feature","properties":{"accommodation_id":2423},"geometry":{"type":"Point","coordinates":[18.194199999999998595967554138042032718658447265625,49.4549999999999982946974341757595539093017578125]}},{"type":"Feature","properties":{"accommodation_id":9198},"geometry":{"type":"Point","coordinates":[13.6921999999999997044142219237983226776123046875,49.71549999999999869260136620141565799713134765625]}},{"type":"Feature","properties":{"accommodation_id":2476},"geometry":{"type":"Point","coordinates":[15.13850000000000051159076974727213382720947265625,50.4894000000000033878677641041576862335205078125]}},{"type":"Feature","properties":{"accommodation_id":8589},"geometry":{"type":"Point","coordinates":[15.8558000000000003382183422218076884746551513671875,50.2066999999999978854248183779418468475341796875]}},{"type":"Feature","properties":{"accommodation_id":2631},"geometry":{"type":"Point","coordinates":[14.1724999999999994315658113919198513031005859375,50.176299999999997680788510479032993316650390625]}},{"type":"Feature","properties":{"accommodation_id":2480},"geometry":{"type":"Point","coordinates":[15.19969999999999998863131622783839702606201171875,50.54440000000000310365066980011761188507080078125]}},{"type":"Feature","properties":{"accommodation_id":7457},"geometry":{"type":"Point","coordinates":[14.43430000000000035242919693700969219207763671875,49.05230000000000245563569478690624237060546875]}},{"type":"Feature","properties":{"accommodation_id":8079},"geometry":{"type":"Point","coordinates":[12.8449000000000008725464795134030282497406005859375,50.12339999999999662350091966800391674041748046875]}},{"type":"Feature","properties":{"accommodation_id":13955},"geometry":{"type":"Point","coordinates":[16.9461000000000012732925824820995330810546875,50.161799999999999499777914024889469146728515625]}},{"type":"Feature","properties":{"accommodation_id":43},"geometry":{"type":"Point","coordinates":[13.1974999999999997868371792719699442386627197265625,49.21119999999999805595507496036589145660400390625]}},{"type":"Feature","properties":{"accommodation_id":19305},"geometry":{"type":"Point","coordinates":[17.117799999999999016608853708021342754364013671875,50.10040000000000048885340220294892787933349609375]}},{"type":"Feature","properties":{"accommodation_id":18996},"geometry":{"type":"Point","coordinates":[14.515399999999999636202119290828704833984375,48.7400999999999982037479639984667301177978515625]}},{"type":"Feature","properties":{"accommodation_id":6442},"geometry":{"type":"Point","coordinates":[16.134299999999999641886461176909506320953369140625,49.4397000000000019781509763561189174652099609375]}},{"type":"Feature","properties":{"accommodation_id":8701},"geometry":{"type":"Point","coordinates":[16.59100000000000108002495835535228252410888671875,48.85629999999999739657141617499291896820068359375]}},{"type":"Feature","properties":{"accommodation_id":7148},"geometry":{"type":"Point","coordinates":[13.921099999999999141664375201798975467681884765625,49.83319999999999794226823723874986171722412109375]}},{"type":"Feature","properties":{"accommodation_id":7493},"geometry":{"type":"Point","coordinates":[15.797399999999999664623828721232712268829345703125,48.91770000000000351292328559793531894683837890625]}},{"type":"Feature","properties":{"accommodation_id":7754},"geometry":{"type":"Point","coordinates":[13.8269000000000001904254531837068498134613037109375,48.89359999999999928377292235381901264190673828125]}},{"type":"Feature","properties":{"accommodation_id":14749},"geometry":{"type":"Point","coordinates":[14.452999999999999403144101961515843868255615234375,48.89330000000000353566065314225852489471435546875]}},{"type":"Feature","properties":{"accommodation_id":1373},"geometry":{"type":"Point","coordinates":[15.1960999999999994969357430818490684032440185546875,50.63969999999999771489456179551780223846435546875]}},{"type":"Feature","properties":{"accommodation_id":15601},"geometry":{"type":"Point","coordinates":[14.4044000000000007588596417917869985103607177734375,48.884399999999999408828443847596645355224609375]}},{"type":"Feature","properties":{"accommodation_id":15066},"geometry":{"type":"Point","coordinates":[17.581900000000000972022462519817054271697998046875,49.0474999999999994315658113919198513031005859375]}},{"type":"Feature","properties":{"accommodation_id":14507},"geometry":{"type":"Point","coordinates":[18.4932000000000016370904631912708282470703125,49.7659000000000020236257114447653293609619140625]}},{"type":"Feature","properties":{"accommodation_id":3579},"geometry":{"type":"Point","coordinates":[14.48140000000000071622707764618098735809326171875,50.86410000000000053432813729159533977508544921875]}},{"type":"Feature","properties":{"accommodation_id":12569},"geometry":{"type":"Point","coordinates":[14.428100000000000591171556152403354644775390625,48.98870000000000146656020660884678363800048828125]}},{"type":"Feature","properties":{"accommodation_id":2375},"geometry":{"type":"Point","coordinates":[13.821400000000000574118530494160950183868408203125,48.85940000000000082991391536779701709747314453125]}},{"type":"Feature","properties":{"accommodation_id":2485},"geometry":{"type":"Point","coordinates":[15.221399999999999153033058973960578441619873046875,50.5176000000000016143530956469476222991943359375]}},{"type":"Feature","properties":{"accommodation_id":5366},"geometry":{"type":"Point","coordinates":[16.808099999999999596411726088263094425201416015625,50.144599999999996953192749060690402984619140625]}},{"type":"Feature","properties":{"accommodation_id":15409},"geometry":{"type":"Point","coordinates":[13.8465000000000006963318810448981821537017822265625,50.64479999999999648707671440206468105316162109375]}},{"type":"Feature","properties":{"accommodation_id":15152},"geometry":{"type":"Point","coordinates":[12.815799999999999414512785733677446842193603515625,49.46119999999999805595507496036589145660400390625]}},{"type":"Feature","properties":{"accommodation_id":14934},"geometry":{"type":"Point","coordinates":[13.6488999999999993661958797019906342029571533203125,48.89330000000000353566065314225852489471435546875]}},{"type":"Feature","properties":{"accommodation_id":15643},"geometry":{"type":"Point","coordinates":[14.5116999999999993775645634741522371768951416015625,50.88329999999999841975295566953718662261962890625]}},{"type":"Feature","properties":{"accommodation_id":15600},"geometry":{"type":"Point","coordinates":[12.78359999999999985220711096189916133880615234375,50.3644000000000033878677641041576862335205078125]}},{"type":"Feature","properties":{"accommodation_id":15035},"geometry":{"type":"Point","coordinates":[15.5434999999999998721023075631819665431976318359375,50.6709000000000031604940886609256267547607421875]}},{"type":"Feature","properties":{"accommodation_id":15224},"geometry":{"type":"Point","coordinates":[16.564299999999999357669366872869431972503662109375,48.8164000000000015688783605583012104034423828125]}},{"type":"Feature","properties":{"accommodation_id":15319},"geometry":{"type":"Point","coordinates":[14.71340000000000003410605131648480892181396484375,49.08019999999999782858139951713383197784423828125]}},{"type":"Feature","properties":{"accommodation_id":20239},"geometry":{"type":"Point","coordinates":[15.197800000000000864019966684281826019287109375,50.65579999999999927240423858165740966796875]}},{"type":"Feature","properties":{"accommodation_id":21037},"geometry":{"type":"Point","coordinates":[17.10079999999999955662133288569748401641845703125,50.22189999999999798774297232739627361297607421875]}},{"type":"Feature","properties":{"accommodation_id":14787},"geometry":{"type":"Point","coordinates":[14.407199999999999562305674771778285503387451171875,49.74889999999999901092451182194054126739501953125]}},{"type":"Feature","properties":{"accommodation_id":15828},"geometry":{"type":"Point","coordinates":[15.1029999999999997584154698415659368038177490234375,49.02289999999999992041921359486877918243408203125]}},{"type":"Feature","properties":{"accommodation_id":652},"geometry":{"type":"Point","coordinates":[14.207300000000000039790393202565610408782958984375,48.6144000000000033878677641041576862335205078125]}},{"type":"Feature","properties":{"accommodation_id":15635},"geometry":{"type":"Point","coordinates":[13.4705999999999992411403582082130014896392822265625,50.2177999999999968849806464277207851409912109375]}},{"type":"Feature","properties":{"accommodation_id":2967},"geometry":{"type":"Point","coordinates":[13.6458999999999992525090419803746044635772705078125,49.106099999999997862687450833618640899658203125]}},{"type":"Feature","properties":{"accommodation_id":16049},"geometry":{"type":"Point","coordinates":[13.627700000000000812860889709554612636566162109375,49.07090000000000173940861714072525501251220703125]}},{"type":"Feature","properties":{"accommodation_id":15694},"geometry":{"type":"Point","coordinates":[17.976600000000001244870873051695525646209716796875,49.93039999999999878355083637870848178863525390625]}},{"type":"Feature","properties":{"accommodation_id":20520},"geometry":{"type":"Point","coordinates":[17.339200000000001722355591482482850551605224609375,50.1039999999999992041921359486877918243408203125]}},{"type":"Feature","properties":{"accommodation_id":15523},"geometry":{"type":"Point","coordinates":[17.6306000000000011596057447604835033416748046875,49.22240000000000037516656448133289813995361328125]}},{"type":"Feature","properties":{"accommodation_id":17426},"geometry":{"type":"Point","coordinates":[17.18599999999999994315658113919198513031005859375,48.87830000000000296722646453417837619781494140625]}},{"type":"Feature","properties":{"accommodation_id":17315},"geometry":{"type":"Point","coordinates":[14.3085000000000004405364961712621152400970458984375,48.6169000000000011141310096718370914459228515625]}},{"type":"Feature","properties":{"accommodation_id":17888},"geometry":{"type":"Point","coordinates":[14.4827999999999992297716744360513985157012939453125,50.8626000000000004774847184307873249053955078125]}},{"type":"Feature","properties":{"accommodation_id":17231},"geometry":{"type":"Point","coordinates":[18.143899999999998584598870365880429744720458984375,49.35759999999999791953086969442665576934814453125]}},{"type":"Feature","properties":{"accommodation_id":17411},"geometry":{"type":"Point","coordinates":[17.759499999999999175770426518283784389495849609375,49.10289999999999821511664777062833309173583984375]}},{"type":"Feature","properties":{"accommodation_id":17435},"geometry":{"type":"Point","coordinates":[14.792500000000000426325641456060111522674560546875,49.03439999999999798774297232739627361297607421875]}},{"type":"Feature","properties":{"accommodation_id":19322},"geometry":{"type":"Point","coordinates":[15.1107999999999993434585121576674282550811767578125,50.4894000000000033878677641041576862335205078125]}},{"type":"Feature","properties":{"accommodation_id":21242},"geometry":{"type":"Point","coordinates":[14.6408000000000004803268893738277256488800048828125,49.22590000000000287627699435688555240631103515625]}},{"type":"Feature","properties":{"accommodation_id":19116},"geometry":{"type":"Point","coordinates":[14.8754000000000008441247700829990208148956298828125,48.89609999999999701003616792149841785430908203125]}},{"type":"Feature","properties":{"accommodation_id":17314},"geometry":{"type":"Point","coordinates":[14.248200000000000642330633127130568027496337890625,48.62089999999999889723767410032451152801513671875]}},{"type":"Feature","properties":{"accommodation_id":19059},"geometry":{"type":"Point","coordinates":[16.00619999999999976125764078460633754730224609375,48.79440000000000310365066980011761188507080078125]}},{"type":"Feature","properties":{"accommodation_id":19106},"geometry":{"type":"Point","coordinates":[18.11710000000000064801497501321136951446533203125,49.59170000000000300133251585066318511962890625]}},{"type":"Feature","properties":{"accommodation_id":19294},"geometry":{"type":"Point","coordinates":[14.953900000000000858335624798201024532318115234375,48.97970000000000112549969344399869441986083984375]}},{"type":"Feature","properties":{"accommodation_id":19085},"geometry":{"type":"Point","coordinates":[16.84669999999999845385900698602199554443359375,48.91980000000000217141860048286616802215576171875]}},{"type":"Feature","properties":{"accommodation_id":19006},"geometry":{"type":"Point","coordinates":[14.4947999999999996845190253225155174732208251953125,50.7128000000000014324541552923619747161865234375]}},{"type":"Feature","properties":{"accommodation_id":19067},"geometry":{"type":"Point","coordinates":[14.71829999999999927240423858165740966796875,49.0878000000000014324541552923619747161865234375]}},{"type":"Feature","properties":{"accommodation_id":19180},"geometry":{"type":"Point","coordinates":[18.421800000000001062971932697109878063201904296875,49.7856000000000022964741219766438007354736328125]}},{"type":"Feature","properties":{"accommodation_id":19284},"geometry":{"type":"Point","coordinates":[15.64020000000000010231815394945442676544189453125,50.3778999999999967940311762504279613494873046875]}},{"type":"Feature","properties":{"accommodation_id":18969},"geometry":{"type":"Point","coordinates":[14.37780000000000057980287238024175167083740234375,49.77850000000000108002495835535228252410888671875]}},{"type":"Feature","properties":{"accommodation_id":19505},"geometry":{"type":"Point","coordinates":[16.07639999999999957935870043002068996429443359375,50.60220000000000339923644787631928920745849609375]}},{"type":"Feature","properties":{"accommodation_id":7708},"geometry":{"type":"Point","coordinates":[16.36319999999999907913661445491015911102294921875,50.30030000000000001136868377216160297393798828125]}},{"type":"Feature","properties":{"accommodation_id":18917},"geometry":{"type":"Point","coordinates":[13.8864000000000000767386154620908200740814208984375,48.9046000000000020691004465334117412567138671875]}},{"type":"Feature","properties":{"accommodation_id":14736},"geometry":{"type":"Point","coordinates":[14.197900000000000630961949354968965053558349609375,48.63700000000000045474735088646411895751953125]}},{"type":"Feature","properties":{"accommodation_id":19430},"geometry":{"type":"Point","coordinates":[14.947800000000000864019966684281826019287109375,49.31060000000000087538865045644342899322509765625]}},{"type":"Feature","properties":{"accommodation_id":17731},"geometry":{"type":"Point","coordinates":[16.89560000000000172803993336856365203857421875,48.861299999999999954525264911353588104248046875]}},{"type":"Feature","properties":{"accommodation_id":18895},"geometry":{"type":"Point","coordinates":[17.311499999999998777866494492627680301666259765625,49.10889999999999844249032321386039257049560546875]}},{"type":"Feature","properties":{"accommodation_id":1196},"geometry":{"type":"Point","coordinates":[15.1356999999999999317878973670303821563720703125,50.7933000000000021145751816220581531524658203125]}},{"type":"Feature","properties":{"accommodation_id":8183},"geometry":{"type":"Point","coordinates":[16.317499999999999005240169935859739780426025390625,50.31439999999999912461134954355657100677490234375]}},{"type":"Feature","properties":{"accommodation_id":4722},"geometry":{"type":"Point","coordinates":[17.125,50.1022999999999996134647517465054988861083984375]}},{"type":"Feature","properties":{"accommodation_id":4684},"geometry":{"type":"Point","coordinates":[16.911300000000000665068000671453773975372314453125,49.9525000000000005684341886080801486968994140625]}},{"type":"Feature","properties":{"accommodation_id":4713},"geometry":{"type":"Point","coordinates":[17.125,50.10199999999999675992512493394315242767333984375]}},{"type":"Feature","properties":{"accommodation_id":114},"geometry":{"type":"Point","coordinates":[14.16929999999999978399500832892954349517822265625,48.63470000000000226236807066015899181365966796875]}},{"type":"Feature","properties":{"accommodation_id":20639},"geometry":{"type":"Point","coordinates":[15.9094999999999995310417943983338773250579833984375,48.85730000000000217141860048286616802215576171875]}},{"type":"Feature","properties":{"accommodation_id":6804},"geometry":{"type":"Point","coordinates":[16.047599999999999198507794062606990337371826171875,49.63199999999999789679350215010344982147216796875]}},{"type":"Feature","properties":{"accommodation_id":2392},"geometry":{"type":"Point","coordinates":[15.8513999999999999346300683100707828998565673828125,48.93299999999999982946974341757595539093017578125]}},{"type":"Feature","properties":{"accommodation_id":3665},"geometry":{"type":"Point","coordinates":[15.8178000000000000824229573481716215610504150390625,48.9134999999999990905052982270717620849609375]}},{"type":"Feature","properties":{"accommodation_id":989},"geometry":{"type":"Point","coordinates":[18.48310000000000030695446184836328029632568359375,49.4883999999999986130205797962844371795654296875]}},{"type":"Feature","properties":{"accommodation_id":5369},"geometry":{"type":"Point","coordinates":[16.49810000000000087538865045644342899322509765625,50.1321999999999974306774674914777278900146484375]}},{"type":"Feature","properties":{"accommodation_id":22570},"geometry":{"type":"Point","coordinates":[15.661699999999999732835931354202330112457275390625,49.77239999999999753299562144093215465545654296875]}},{"type":"Feature","properties":{"accommodation_id":9075},"geometry":{"type":"Point","coordinates":[15.301899999999999835154085303656756877899169921875,49.96419999999999816964191268198192119598388671875]}},{"type":"Feature","properties":{"accommodation_id":567},"geometry":{"type":"Point","coordinates":[15.9094999999999995310417943983338773250579833984375,48.85730000000000217141860048286616802215576171875]}},{"type":"Feature","properties":{"accommodation_id":19919},"geometry":{"type":"Point","coordinates":[12.939299999999999357669366872869431972503662109375,49.8607999999999975671016727574169635772705078125]}},{"type":"Feature","properties":{"accommodation_id":19852},"geometry":{"type":"Point","coordinates":[17.4288999999999987267074175179004669189453125,49.0741000000000013869794202037155628204345703125]}},{"type":"Feature","properties":{"accommodation_id":4516},"geometry":{"type":"Point","coordinates":[12.856700000000000017053025658242404460906982421875,49.40440000000000253521648119203746318817138671875]}},{"type":"Feature","properties":{"accommodation_id":334},"geometry":{"type":"Point","coordinates":[15.806400000000000005684341886080801486968994140625,50.7085000000000007958078640513122081756591796875]}},{"type":"Feature","properties":{"accommodation_id":19581},"geometry":{"type":"Point","coordinates":[14.7599999999999997868371792719699442386627197265625,49.00460000000000349018591805361211299896240234375]}},{"type":"Feature","properties":{"accommodation_id":19697},"geometry":{"type":"Point","coordinates":[16.30239999999999866986399865709245204925537109375,50.351100000000002410160959698259830474853515625]}},{"type":"Feature","properties":{"accommodation_id":19665},"geometry":{"type":"Point","coordinates":[16.76650000000000062527760746888816356658935546875,48.87299999999999755573298898525536060333251953125]}},{"type":"Feature","properties":{"accommodation_id":19722},"geometry":{"type":"Point","coordinates":[14.120799999999999130295691429637372493743896484375,49.37899999999999778310666442848742008209228515625]}},{"type":"Feature","properties":{"accommodation_id":19669},"geometry":{"type":"Point","coordinates":[13.7861999999999991217691786005161702632904052734375,48.8753999999999990677679306827485561370849609375]}},{"type":"Feature","properties":{"accommodation_id":21187},"geometry":{"type":"Point","coordinates":[16.344300000000000494537744089029729366302490234375,50.28909999999999769215719425119459629058837890625]}},{"type":"Feature","properties":{"accommodation_id":14561},"geometry":{"type":"Point","coordinates":[12.3485999999999993548271959298290312290191650390625,50.1259000000000014551915228366851806640625]}},{"type":"Feature","properties":{"accommodation_id":4758},"geometry":{"type":"Point","coordinates":[15.512499999999999289457264239899814128875732421875,50.68130000000000023874235921539366245269775390625]}},{"type":"Feature","properties":{"accommodation_id":1559},"geometry":{"type":"Point","coordinates":[14.4258000000000006224354365258477628231048583984375,50.06580000000000296722646453417837619781494140625]}},{"type":"Feature","properties":{"accommodation_id":22079},"geometry":{"type":"Point","coordinates":[12.49980000000000046611603465862572193145751953125,50.34049999999999869260136620141565799713134765625]}},{"type":"Feature","properties":{"accommodation_id":754},"geometry":{"type":"Point","coordinates":[14.4367000000000000881072992342524230480194091796875,50.0739999999999980673237587325274944305419921875]}},{"type":"Feature","properties":{"accommodation_id":20554},"geometry":{"type":"Point","coordinates":[17.3068999999999988403942552395164966583251953125,50.0379999999999967030817060731351375579833984375]}},{"type":"Feature","properties":{"accommodation_id":19791},"geometry":{"type":"Point","coordinates":[16.89920000000000044337866711430251598358154296875,48.91470000000000339923644787631928920745849609375]}},{"type":"Feature","properties":{"accommodation_id":19914},"geometry":{"type":"Point","coordinates":[14.3175000000000007815970093361102044582366943359375,48.81269999999999953388396534137427806854248046875]}},{"type":"Feature","properties":{"accommodation_id":19847},"geometry":{"type":"Point","coordinates":[18.2586000000000012732925824820995330810546875,49.434899999999998954081092961132526397705078125]}},{"type":"Feature","properties":{"accommodation_id":19502},"geometry":{"type":"Point","coordinates":[16.626599999999999823785401531495153903961181640625,48.85079999999999955662133288569748401641845703125]}},{"type":"Feature","properties":{"accommodation_id":15092},"geometry":{"type":"Point","coordinates":[17.949999999999999289457264239899814128875732421875,49.546300000000002228262019343674182891845703125]}},{"type":"Feature","properties":{"accommodation_id":21150},"geometry":{"type":"Point","coordinates":[16.488600000000001699618223938159644603729248046875,50.1779999999999972715158946812152862548828125]}},{"type":"Feature","properties":{"accommodation_id":22891},"geometry":{"type":"Point","coordinates":[12.786799999999999499777914024889469146728515625,49.9054000000000002046363078989088535308837890625]}},{"type":"Feature","properties":{"accommodation_id":17467},"geometry":{"type":"Point","coordinates":[16.891600000000000392219590139575302600860595703125,48.8618000000000023419488570652902126312255859375]}},{"type":"Feature","properties":{"accommodation_id":2960},"geometry":{"type":"Point","coordinates":[15.4263999999999992240873325499705970287322998046875,50.775700000000000500222085975110530853271484375]}},{"type":"Feature","properties":{"accommodation_id":22087},"geometry":{"type":"Point","coordinates":[40.1075000000000017053025658242404460906982421875,73.8949999999999960209606797434389591217041015625]}},{"type":"Feature","properties":{"accommodation_id":1629},"geometry":{"type":"Point","coordinates":[18.162400000000001654143488849513232707977294921875,49.46990000000000264890331891365349292755126953125]}},{"type":"Feature","properties":{"accommodation_id":2896},"geometry":{"type":"Point","coordinates":[14.989200000000000301270119962282478809356689453125,50.79279999999999972715158946812152862548828125]}},{"type":"Feature","properties":{"accommodation_id":21182},"geometry":{"type":"Point","coordinates":[16.309799999999999187139110290445387363433837890625,50.3744999999999976125764078460633754730224609375]}},{"type":"Feature","properties":{"accommodation_id":17073},"geometry":{"type":"Point","coordinates":[17.3222999999999984765963745303452014923095703125,49.97789999999999821511664777062833309173583984375]}},{"type":"Feature","properties":{"accommodation_id":21236},"geometry":{"type":"Point","coordinates":[14.7495999999999991558752299170009791851043701171875,49.09729999999999705551090301014482975006103515625]}},{"type":"Feature","properties":{"accommodation_id":22456},"geometry":{"type":"Point","coordinates":[16.815599999999999880628820392303168773651123046875,48.90559999999999973852027324028313159942626953125]}},{"type":"Feature","properties":{"accommodation_id":7844},"geometry":{"type":"Point","coordinates":[14.5296000000000002927436071331612765789031982421875,50.81089999999999662350091966800391674041748046875]}},{"type":"Feature","properties":{"accommodation_id":22004},"geometry":{"type":"Point","coordinates":[16.61840000000000117097442853264510631561279296875,48.8365000000000009094947017729282379150390625]}},{"type":"Feature","properties":{"accommodation_id":5288},"geometry":{"type":"Point","coordinates":[18.288599999999998857447280897758901119232177734375,49.43220000000000169393388205207884311676025390625]}},{"type":"Feature","properties":{"accommodation_id":19851},"geometry":{"type":"Point","coordinates":[16.03320000000000078443918027915060520172119140625,49.61189999999999855617716093547642230987548828125]}},{"type":"Feature","properties":{"accommodation_id":20741},"geometry":{"type":"Point","coordinates":[16.631099999999999994315658113919198513031005859375,48.85079999999999955662133288569748401641845703125]}},{"type":"Feature","properties":{"accommodation_id":22031},"geometry":{"type":"Point","coordinates":[14.314099999999999823785401531495153903961181640625,48.811700000000001864464138634502887725830078125]}},{"type":"Feature","properties":{"accommodation_id":22020},"geometry":{"type":"Point","coordinates":[15.7294000000000000483169060316868126392364501953125,50.6981999999999999317878973670303821563720703125]}},{"type":"Feature","properties":{"accommodation_id":14993},"geometry":{"type":"Point","coordinates":[16.584599999999998232169673428870737552642822265625,49.18599999999999994315658113919198513031005859375]}},{"type":"Feature","properties":{"accommodation_id":765},"geometry":{"type":"Point","coordinates":[16.561299999999999243982529151253402233123779296875,48.89560000000000172803993336856365203857421875]}},{"type":"Feature","properties":{"accommodation_id":2487},"geometry":{"type":"Point","coordinates":[15.07809999999999917008608463220298290252685546875,50.48729999999999762394509161822497844696044921875]}},{"type":"Feature","properties":{"accommodation_id":1263},"geometry":{"type":"Point","coordinates":[13.6260999999999992127186487778089940547943115234375,49.08579999999999898818714427761733531951904296875]}},{"type":"Feature","properties":{"accommodation_id":22771},"geometry":{"type":"Point","coordinates":[15.2108000000000007645439836778677999973297119140625,49.3470999999999975216269376687705516815185546875]}},{"type":"Feature","properties":{"accommodation_id":2362},"geometry":{"type":"Point","coordinates":[14.6472999999999995424104781704954802989959716796875,50.43500000000000227373675443232059478759765625]}},{"type":"Feature","properties":{"accommodation_id":21011},"geometry":{"type":"Point","coordinates":[13.173500000000000653699316899292171001434326171875,50.38589999999999946567186270840466022491455078125]}},{"type":"Feature","properties":{"accommodation_id":3086},"geometry":{"type":"Point","coordinates":[15.736299999999999954525264911353588104248046875,50.6951999999999998181010596454143524169921875]}},{"type":"Feature","properties":{"accommodation_id":21431},"geometry":{"type":"Point","coordinates":[14.9438999999999992951416061259806156158447265625,48.9583999999999974761522025801241397857666015625]}},{"type":"Feature","properties":{"accommodation_id":22527},"geometry":{"type":"Point","coordinates":[14.1880000000000006110667527536861598491668701171875,50.5833999999999974761522025801241397857666015625]}},{"type":"Feature","properties":{"accommodation_id":20358},"geometry":{"type":"Point","coordinates":[17.059899999999998954081092961132526397705078125,50.1886999999999972033037920482456684112548828125]}},{"type":"Feature","properties":{"accommodation_id":22621},"geometry":{"type":"Point","coordinates":[14.7843999999999997640998117276467382907867431640625,48.98859999999999814690454513765871524810791015625]}},{"type":"Feature","properties":{"accommodation_id":1613},"geometry":{"type":"Point","coordinates":[14.2964000000000002188471626141108572483062744140625,50.8686000000000007048583938740193843841552734375]}},{"type":"Feature","properties":{"accommodation_id":692},"geometry":{"type":"Point","coordinates":[12.9303000000000007929656931082718074321746826171875,50.3616999999999990222931955941021442413330078125]}},{"type":"Feature","properties":{"accommodation_id":20855},"geometry":{"type":"Point","coordinates":[13.236399999999999721467247582040727138519287109375,49.13810000000000144382283906452357769012451171875]}},{"type":"Feature","properties":{"accommodation_id":7442},"geometry":{"type":"Point","coordinates":[14.5283999999999995367261362844146788120269775390625,48.98899999999999721467247582040727138519287109375]}},{"type":"Feature","properties":{"accommodation_id":7140},"geometry":{"type":"Point","coordinates":[16.108599999999999141664375201798975467681884765625,50.61869999999999691908669774420559406280517578125]}},{"type":"Feature","properties":{"accommodation_id":9281},"geometry":{"type":"Point","coordinates":[17.05120000000000146656020660884678363800048828125,50.18520000000000180762071977369487285614013671875]}},{"type":"Feature","properties":{"accommodation_id":9319},"geometry":{"type":"Point","coordinates":[17.042300000000000892441676114685833454132080078125,50.03349999999999653255144949071109294891357421875]}},{"type":"Feature","properties":{"accommodation_id":355},"geometry":{"type":"Point","coordinates":[15.4580999999999999516830939683131873607635498046875,50.72890000000000298996383207850158214569091796875]}},{"type":"Feature","properties":{"accommodation_id":14802},"geometry":{"type":"Point","coordinates":[17.040800000000000835598257253877818584442138671875,50.20389999999999730562194599770009517669677734375]}},{"type":"Feature","properties":{"accommodation_id":14399},"geometry":{"type":"Point","coordinates":[14.8599999999999994315658113919198513031005859375,48.96350000000000335376171278767287731170654296875]}},{"type":"Feature","properties":{"accommodation_id":15336},"geometry":{"type":"Point","coordinates":[16.756000000000000227373675443232059478759765625,49.3444999999999964757080306299030780792236328125]}},{"type":"Feature","properties":{"accommodation_id":19164},"geometry":{"type":"Point","coordinates":[17.1253999999999990677679306827485561370849609375,50.10199999999999675992512493394315242767333984375]}},{"type":"Feature","properties":{"accommodation_id":15045},"geometry":{"type":"Point","coordinates":[14.9410000000000007247535904753021895885467529296875,49.14229999999999876081346883438527584075927734375]}},{"type":"Feature","properties":{"accommodation_id":19163},"geometry":{"type":"Point","coordinates":[17.123799999999999243982529151253402233123779296875,50.10210000000000007958078640513122081756591796875]}},{"type":"Feature","properties":{"accommodation_id":15629},"geometry":{"type":"Point","coordinates":[14.2280999999999995253574525122530758380889892578125,48.642200000000002546585164964199066162109375]}},{"type":"Feature","properties":{"accommodation_id":15230},"geometry":{"type":"Point","coordinates":[16.493900000000000005684341886080801486968994140625,48.8070000000000021600499167107045650482177734375]}},{"type":"Feature","properties":{"accommodation_id":7988},"geometry":{"type":"Point","coordinates":[15.911300000000000665068000671453773975372314453125,50.5621000000000009322320693172514438629150390625]}},{"type":"Feature","properties":{"accommodation_id":15397},"geometry":{"type":"Point","coordinates":[14.2291000000000007474909580196253955364227294921875,48.952899999999999636202119290828704833984375]}},{"type":"Feature","properties":{"accommodation_id":17332},"geometry":{"type":"Point","coordinates":[15.5509000000000003893774191965349018573760986328125,50.67179999999999751025825389660894870758056640625]}},{"type":"Feature","properties":{"accommodation_id":5576},"geometry":{"type":"Point","coordinates":[13.9580000000000001847411112976260483264923095703125,49.54050000000000153477230924181640148162841796875]}},{"type":"Feature","properties":{"accommodation_id":1886},"geometry":{"type":"Point","coordinates":[14.9547000000000007702283255639486014842987060546875,49.841599999999999681676854379475116729736328125]}},{"type":"Feature","properties":{"accommodation_id":1982},"geometry":{"type":"Point","coordinates":[15.1499000000000005883293852093629539012908935546875,50.7890000000000014779288903810083866119384765625]}},{"type":"Feature","properties":{"accommodation_id":14904},"geometry":{"type":"Point","coordinates":[18.19859999999999899955582804977893829345703125,49.83670000000000044337866711430251598358154296875]}},{"type":"Feature","properties":{"accommodation_id":9320},"geometry":{"type":"Point","coordinates":[17.202200000000001267608240596018731594085693359375,50.18010000000000303543856716714799404144287109375]}},{"type":"Feature","properties":{"accommodation_id":6160},"geometry":{"type":"Point","coordinates":[15.1578999999999997072563928668387234210968017578125,50.52929999999999921556081972084939479827880859375]}},{"type":"Feature","properties":{"accommodation_id":5384},"geometry":{"type":"Point","coordinates":[15.291100000000000136424205265939235687255859375,50.62740000000000151203494169749319553375244140625]}},{"type":"Feature","properties":{"accommodation_id":4628},"geometry":{"type":"Point","coordinates":[12.865899999999999891997504164464771747589111328125,50.25610000000000354702933691442012786865234375]}},{"type":"Feature","properties":{"accommodation_id":7967},"geometry":{"type":"Point","coordinates":[14.3175000000000007815970093361102044582366943359375,48.81269999999999953388396534137427806854248046875]}},{"type":"Feature","properties":{"accommodation_id":3769},"geometry":{"type":"Point","coordinates":[15.868700000000000471800376544706523418426513671875,48.9072000000000031150193535722792148590087890625]}},{"type":"Feature","properties":{"accommodation_id":6239},"geometry":{"type":"Point","coordinates":[15.0722000000000004860112312599085271358489990234375,50.5071999999999974306774674914777278900146484375]}},{"type":"Feature","properties":{"accommodation_id":1946},"geometry":{"type":"Point","coordinates":[14.9575999999999993406163412146270275115966796875,49.15899999999999891997504164464771747589111328125]}},{"type":"Feature","properties":{"accommodation_id":14398},"geometry":{"type":"Point","coordinates":[14.23440000000000082991391536779701709747314453125,48.85119999999999862438926356844604015350341796875]}},{"type":"Feature","properties":{"accommodation_id":397},"geometry":{"type":"Point","coordinates":[13.234500000000000596855898038484156131744384765625,49.136200000000002319211489520967006683349609375]}},{"type":"Feature","properties":{"accommodation_id":209},"geometry":{"type":"Point","coordinates":[15.180099999999999482724888366647064685821533203125,50.766199999999997771737980656325817108154296875]}},{"type":"Feature","properties":{"accommodation_id":1041},"geometry":{"type":"Point","coordinates":[15.1453000000000006508571459562517702579498291015625,49.14359999999999928377292235381901264190673828125]}},{"type":"Feature","properties":{"accommodation_id":2326},"geometry":{"type":"Point","coordinates":[14.905499999999999971578290569595992565155029296875,49.0696999999999974306774674914777278900146484375]}},{"type":"Feature","properties":{"accommodation_id":20937},"geometry":{"type":"Point","coordinates":[13.2245000000000008100187187665142118930816650390625,49.16040000000000276259015663526952266693115234375]}},{"type":"Feature","properties":{"accommodation_id":15222},"geometry":{"type":"Point","coordinates":[15.301899999999999835154085303656756877899169921875,50.49750000000000227373675443232059478759765625]}},{"type":"Feature","properties":{"accommodation_id":19453},"geometry":{"type":"Point","coordinates":[16.885000000000001563194018672220408916473388671875,48.7719000000000022509993868879973888397216796875]}},{"type":"Feature","properties":{"accommodation_id":17281},"geometry":{"type":"Point","coordinates":[15.9944000000000006167510946397669613361358642578125,50.4431000000000011596057447604835033416748046875]}},{"type":"Feature","properties":{"accommodation_id":17918},"geometry":{"type":"Point","coordinates":[14.3545999999999995822008713730610907077789306640625,50.1056999999999987949195201508700847625732421875]}},{"type":"Feature","properties":{"accommodation_id":14758},"geometry":{"type":"Point","coordinates":[16.235800000000001119815351557917892932891845703125,50.512799999999998590283212251961231231689453125]}},{"type":"Feature","properties":{"accommodation_id":14348},"geometry":{"type":"Point","coordinates":[17.69030000000000057980287238024175167083740234375,50.2042000000000001591615728102624416351318359375]}},{"type":"Feature","properties":{"accommodation_id":15016},"geometry":{"type":"Point","coordinates":[15.1958000000000001961097950697876513004302978515625,50.507800000000003137756721116602420806884765625]}},{"type":"Feature","properties":{"accommodation_id":2483},"geometry":{"type":"Point","coordinates":[15.156800000000000494537744089029729366302490234375,50.587299999999999045030563138425350189208984375]}},{"type":"Feature","properties":{"accommodation_id":8630},"geometry":{"type":"Point","coordinates":[14.7614999999999998436805981327779591083526611328125,49.0076999999999998181010596454143524169921875]}},{"type":"Feature","properties":{"accommodation_id":6986},"geometry":{"type":"Point","coordinates":[17.76599999999999823785401531495153903961181640625,49.0998000000000018872015061788260936737060546875]}},{"type":"Feature","properties":{"accommodation_id":6517},"geometry":{"type":"Point","coordinates":[15.8222000000000004860112312599085271358489990234375,49.5972000000000008412825991399586200714111328125]}},{"type":"Feature","properties":{"accommodation_id":6316},"geometry":{"type":"Point","coordinates":[14.2935999999999996390442902338691055774688720703125,49.7879999999999967030817060731351375579833984375]}},{"type":"Feature","properties":{"accommodation_id":3138},"geometry":{"type":"Point","coordinates":[15.969300000000000494537744089029729366302490234375,49.6475999999999970668795867823064327239990234375]}},{"type":"Feature","properties":{"accommodation_id":6844},"geometry":{"type":"Point","coordinates":[17.75430000000000063664629124104976654052734375,49.09859999999999757847035652957856655120849609375]}},{"type":"Feature","properties":{"accommodation_id":15615},"geometry":{"type":"Point","coordinates":[18.63340000000000173940861714072525501251220703125,49.52159999999999939745976007543504238128662109375]}},{"type":"Feature","properties":{"accommodation_id":15463},"geometry":{"type":"Point","coordinates":[16.63459999999999894271240918897092342376708984375,48.805599999999998317434801720082759857177734375]}},{"type":"Feature","properties":{"accommodation_id":137},"geometry":{"type":"Point","coordinates":[12.2842000000000002302158463862724602222442626953125,50.131900000000001682565198279917240142822265625]}},{"type":"Feature","properties":{"accommodation_id":756},"geometry":{"type":"Point","coordinates":[14.3117999999999998550492819049395620822906494140625,48.79729999999999989768184605054557323455810546875]}},{"type":"Feature","properties":{"accommodation_id":1014},"geometry":{"type":"Point","coordinates":[15.2871000000000005769607014372013509273529052734375,50.76050000000000039790393202565610408782958984375]}},{"type":"Feature","properties":{"accommodation_id":1277},"geometry":{"type":"Point","coordinates":[15.828900000000000858335624798201024532318115234375,48.8924999999999982946974341757595539093017578125]}},{"type":"Feature","properties":{"accommodation_id":1792},"geometry":{"type":"Point","coordinates":[14.4212000000000006849631972727365791797637939453125,48.88889999999999957935870043002068996429443359375]}},{"type":"Feature","properties":{"accommodation_id":17325},"geometry":{"type":"Point","coordinates":[16.768899999999998584598870365880429744720458984375,49.33670000000000044337866711430251598358154296875]}},{"type":"Feature","properties":{"accommodation_id":19859},"geometry":{"type":"Point","coordinates":[15.4167000000000005144329406903125345706939697265625,50.78179999999999694182406528852880001068115234375]}},{"type":"Feature","properties":{"accommodation_id":15747},"geometry":{"type":"Point","coordinates":[15.01050000000000039790393202565610408782958984375,49.1392000000000024328983272425830364227294921875]}},{"type":"Feature","properties":{"accommodation_id":5621},"geometry":{"type":"Point","coordinates":[14.6611999999999991217691786005161702632904052734375,50.5705999999999988858689903281629085540771484375]}},{"type":"Feature","properties":{"accommodation_id":9066},"geometry":{"type":"Point","coordinates":[15.2692999999999994287236404488794505596160888671875,49.95720000000000027284841053187847137451171875]}},{"type":"Feature","properties":{"accommodation_id":1862},"geometry":{"type":"Point","coordinates":[15.0037000000000002586375558166764676570892333984375,49.14359999999999928377292235381901264190673828125]}},{"type":"Feature","properties":{"accommodation_id":5770},"geometry":{"type":"Point","coordinates":[15.36110000000000042064129956997931003570556640625,50.73429999999999751025825389660894870758056640625]}},{"type":"Feature","properties":{"accommodation_id":15809},"geometry":{"type":"Point","coordinates":[14.539699999999999846522769075818359851837158203125,50.684899999999998954081092961132526397705078125]}},{"type":"Feature","properties":{"accommodation_id":5922},"geometry":{"type":"Point","coordinates":[15.5508000000000006224354365258477628231048583984375,50.6683000000000021145751816220581531524658203125]}},{"type":"Feature","properties":{"accommodation_id":15544},"geometry":{"type":"Point","coordinates":[15.0480999999999998095745468162931501865386962890625,50.77409999999999712372300564311444759368896484375]}},{"type":"Feature","properties":{"accommodation_id":15367},"geometry":{"type":"Point","coordinates":[13.211600000000000676436684443615376949310302734375,49.125100000000003319655661471188068389892578125]}},{"type":"Feature","properties":{"accommodation_id":15649},"geometry":{"type":"Point","coordinates":[18.11840000000000117097442853264510631561279296875,49.43350000000000221689333557151257991790771484375]}},{"type":"Feature","properties":{"accommodation_id":6053},"geometry":{"type":"Point","coordinates":[15.582300000000000039790393202565610408782958984375,50.42880000000000251247911364771425724029541015625]}},{"type":"Feature","properties":{"accommodation_id":5877},"geometry":{"type":"Point","coordinates":[15.0602000000000000312638803734444081783294677734375,50.7513000000000005229594535194337368011474609375]}},{"type":"Feature","properties":{"accommodation_id":3878},"geometry":{"type":"Point","coordinates":[15.878299999999999414512785733677446842193603515625,50.4243000000000023419488570652902126312255859375]}},{"type":"Feature","properties":{"accommodation_id":5180},"geometry":{"type":"Point","coordinates":[15.716499999999999914734871708787977695465087890625,50.66550000000000153477230924181640148162841796875]}},{"type":"Feature","properties":{"accommodation_id":9318},"geometry":{"type":"Point","coordinates":[17.19369999999999976125764078460633754730224609375,50.19879999999999853343979339115321636199951171875]}},{"type":"Feature","properties":{"accommodation_id":3738},"geometry":{"type":"Point","coordinates":[14.9273000000000006792788553866557776927947998046875,48.96000000000000085265128291212022304534912109375]}},{"type":"Feature","properties":{"accommodation_id":16800},"geometry":{"type":"Point","coordinates":[18.122800000000001574562702444382011890411376953125,49.81309999999999860165189602412283420562744140625]}},{"type":"Feature","properties":{"accommodation_id":10931},"geometry":{"type":"Point","coordinates":[16.89229999999999876081346883438527584075927734375,48.849299999999999499777914024889469146728515625]}},{"type":"Feature","properties":{"accommodation_id":17194},"geometry":{"type":"Point","coordinates":[15.45439999999999969304553815163671970367431640625,49.1843999999999965666575008071959018707275390625]}},{"type":"Feature","properties":{"accommodation_id":15295},"geometry":{"type":"Point","coordinates":[14.251200000000000756017470848746597766876220703125,48.80819999999999936335370875895023345947265625]}},{"type":"Feature","properties":{"accommodation_id":14208},"geometry":{"type":"Point","coordinates":[17.30069999999999907913661445491015911102294921875,50.0208999999999974761522025801241397857666015625]}},{"type":"Feature","properties":{"accommodation_id":1120},"geometry":{"type":"Point","coordinates":[16.549600000000001642774805077351629734039306640625,49.15919999999999845385900698602199554443359375]}},{"type":"Feature","properties":{"accommodation_id":143},"geometry":{"type":"Point","coordinates":[17.397800000000000153477230924181640148162841796875,50.19330000000000069348971010185778141021728515625]}}]}');
+                }
+            </script>
+        </div>
+        <!-- //map fullscreen -->
+
+        <!-- [layout] - ACCOMMODATION PAGE WRAP -->
+        <div class="l_accommodation-list-body"> <!-- l_accommodation-list-body--fullscreen -->
+
+            <h1 class="h3 margin-b-clear">Apartmány, výpis apartmánů například pro pobyt</h1>
+            <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="list-breadcrumb desktop-only"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz" title="Na úvodní stránku" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Home</span></a></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="list-breadcrumb__item"><a href="https://kamsi.cz" title="Ubytování" itemprop="url" class="list-breadcrumb__item__in"><span itemprop="name">Ubytování</span></a></li><li class="list-breadcrumb__item"><span><strong>Apartmány a ubytování</strong></span></li></ul>            <p class="l_accommodation-list-body-p">Vhodné nebo vybrané <strong>apartmány</strong> v libovolné lokalitě a v klidném prostředí;) Právě jste na našem webu s možností ubytování v části zasvěcené pro apartmány! Využijte všechny naše nastavení filtrace typů na základě vyplnění oblasti či třeba kvality, služeb, počtu osob či pokojů, ceny pro ještě přesnější objevení apartmánů či také toho co by se vám mohlo líbit;)</p>
+
+            <div class="accommodation-list-content">
+                <div class="row">
+                    <div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/apartman-u-mikesu/detail/15650/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56044_15650.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56045_15650.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2010_01_b/56046_15650.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>2</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>4</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 650.00 Kč apartmán/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/apartman-u-mikesu/detail/15650" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),15650)"  title="Apartmán u Mikešů - apartmány, Milevsko, Jižní Čechy">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Apartmán u Mikešů</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Milevsko, Jižní Čechy                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/pension-koula/detail/327/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2012_04_b/82868_327.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2012_04_b/82873_327.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2012_04_b/82874_327.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>10</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>30</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 300.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/pension-koula/detail/327" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),327)"  title="Pension Koula - apartmány, Pec pod Sněžkou, Krkonoše a Podkrkonoší">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Pension Koula</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Pec pod Sněžkou, Krkonoše a Podkrkonoší                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/penzion-loktuse/detail/655/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2010_11_b/67936_655.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_09_b/3989_655.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_09_b/3991_655.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>5</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>22</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 240.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/penzion-loktuse/detail/655" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),655)"  title="Penzion Loktuše - apartmány, Loktuše, Český ráj">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Penzion Loktuše</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Loktuše, Český ráj                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/levne-ubytovani-v-treboni/detail/3629/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2022_06_b/126136_3629.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2022_06_b/126135_3629.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2022_06_b/126133_3629.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>2</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>7</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 400.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/levne-ubytovani-v-treboni/detail/3629" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),3629)"  title="Levné ubytování v Třeboni - apartmány, Třeboň, Jižní Čechy">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Levné ubytování v Třeboni</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Třeboň, Jižní Čechy                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/ubytovani-pod-sneznikem/detail/515/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2015_07_b/107266_515.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2015_07_b/107279_515.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2015_07_b/107278_515.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>6</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>17</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 180.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/ubytovani-pod-sneznikem/detail/515" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),515)"  title="Ubytování Pod Sněžníkem - apartmány, Staré Město, Jeseníky">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Ubytování Pod Sněžníkem</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Staré Město, Jeseníky                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/penzion-u-hradku-/detail/328/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2019_02_b/121065_328.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_01_b/98123_328.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2019_02_b/121064_328.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>12</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>35</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 500.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/penzion-u-hradku-/detail/328" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),328)"  title="Penzion U Hrádku **** - apartmány, Znojmo, Jižní Morava - Znojemsko">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Penzion U Hrádku ****</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Znojmo, Jižní Morava - Znojemsko                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/apartmany-u-zlate-stoky-chko-trebonsko-/detail/856/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2016_01_b/113592_856.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_10_b/5085_856.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_10_b/5086_856.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>9</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>21</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 250.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/apartmany-u-zlate-stoky-chko-trebonsko-/detail/856" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),856)"  title="Apartmány U Zlaté stoky *** ( CHKO Třeboňsko ) - apartmány, Ponědraž, Jižní Čechy">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Apartmány U Zlaté stoky *** ( CHKO Třeboňsko )</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Ponědraž, Jižní Čechy                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/apartmany-plischke/detail/401/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_08_b/2312_401.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2008_07_b/40734_401.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2008_07_b/40731_401.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>10</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>32</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 259.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/apartmany-plischke/detail/401" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),401)"  title="Apartmány Plischke - apartmány, Lipová-lázně, Jeseníky">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Apartmány Plischke</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Lipová-lázně, Jeseníky                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/apartment-barbara/detail/167/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_07_b/711_167.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_07_b/713_167.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2009_06_b/49702_167.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>4</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>8</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 1300.00 Kč apartmán/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/apartment-barbara/detail/167" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),167)"  title="Apartment BARBARA*** - apartmány, Mariánské Lázně, Karlovy Vary a západočeské lázně">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Apartment BARBARA***</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Mariánské Lázně, Karlovy Vary a západočeské lázně                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/apartmanyu-andrasu/detail/18986/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2020_07_b/123719_18986.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_06_b/101972_18986.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_06_b/101976_18986.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>4</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>8</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 490.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/apartmanyu-andrasu/detail/18986" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),18986)"  title="Apartmány  U Andrášů - apartmány, Děčín, České Švýcarsko, Děčínsko">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Apartmány  U Andrášů</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Děčín, České Švýcarsko, Děčínsko                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/penzion-cernodolsky-mlyn/detail/17817/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_11_b/103984_17817.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_11_b/103983_17817.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2014_11_b/104348_17817.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>10</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>24</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 700.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/penzion-cernodolsky-mlyn/detail/17817" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),17817)"  title="Penzion Černodolský mlýn - apartmány, Oparno, České středohoří a Žatecko">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">Penzion Černodolský mlýn</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Oparno, České středohoří a Žatecko                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div><div class="accommodation-box accommodation-list-col col-xs-12 col-sm-6">
+    <div data-href="/ubytovani-u-volencu/detail/1011/" class="accommodtn-preview accommodtn-preview--full-screen  js-accommodtn-item">
+
+        <div class="accommodtn-preview__img">
+            <!-- INSIDE CAROUSEL -->
+            <div class="js-carousel-accomodtn-item">
+                <div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_11_b/6123_1011.jpg"></div></div><div class="slick-inside-item"><div class="accommodtn-preview__gallery-item js-accommodtn-gallery-item" data-bg="https://www.kamsi.cz/edit/foto_kamsi/2005_11_b/6141_1011.jpg"></div></div>            </div>
+            <!-- //INSIDE CAROUSEL -->
+
+            <!-- ACCOMMODATION INFO -->
+            <div class="accommodtn-preview__info simulate-link">
+                <div class="dis-table">
+                    <div class="accommodtn-preview__meta-info accommodtn-preview__meta-info--sm-hp dis-table__table-cell">
+                        <span class="accommodtn-preview__meta-info-item">Pokoje: <b>3</b></span>
+                        <span class="accommodtn-preview__meta-info-item">Osob: <b>11</b></span>
+                    </div>
+                    <div class="accommodtn-preview__price accommodtn-preview__price--sm-hp dis-table__table-cell">
+                        <span>Ceny <b>od 150.00 Kč osobu/noc</b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION INFO -->
+        </div>
+
+        <a href="/ubytovani-u-volencu/detail/1011" class="accommodtn-preview__link" data-remodal-target="modal-detail" onclick="loadAccommodationDataTo(document.getElementById('accommodation-element'),1011)"  title="ubytování u Volenců - apartmány, Hartmanice, Šumava a Českokrumlovsko">
+            <!-- ACCOMMODATION FOOTER -->
+            <div class="accommodtn-preview__footer dis-table">
+                <div class="dis-table__table-cell ico-cell">
+                        <span style="height: 50px" class="accommodtn-preview__ico svg-icon svg-icon--responsive svg-icon-apartment 445"
+                              data-grunticon-embed></span>
+                </div>
+                <div class="dis-table__table-cell">
+                    <h3 class="accommodtn-preview__title margin-clear font-w-normal one-line">ubytování u Volenců</h3>
+                    <div class="accommodtn-preview__location one-line">
+                        apartmány, Hartmanice, Šumava a Českokrumlovsko                    </div>
+                </div>
+            </div>
+            <!-- //ACCOMMODATION FOOTER -->
+        </a>
+    </div>
+</div>                </div>
+                <div class="pagination"><div class="pagination__box"><a href="/apartmany/" class="pagination__button pagination__button--prev">Předchozí</a></div><div class="pagination__box txt-center"><ul class="pagination__list list-inline"><li class="list-inline__item pagination__list-item"><a href="/apartmany/" class="pagination__list-item-in">1</a></li><li class="list-inline__item pagination__list-item"><span  class="pagination__list-item-in pagination__list-item-in--active">2</a><li class="list-inline__item pagination__list-item"><a href="/apartmany/page-3/" class="pagination__list-item-in">3</a></li><li class="list-inline__item pagination__list-item"><a href="/apartmany/page-4/" class="pagination__list-item-in">4</a></li><li class="list-inline__item pagination__list-item"><a href="/apartmany/page-5/" class="pagination__list-item-in">5</a></li><li class="list-inline__item pagination__list-item"><span>...</span></li><li class="list-inline__item pagination__list-item"><a href="/apartmany/page-71/" class="pagination__list-item-in">71</a></li></ul></div><div class="pagination__box txt-right"><a href="/apartmany/page-3/" class="pagination__button pagination__button--next">Další</a></div></div>            </div>
+
+            <div class="content-box accommodation-list-content-box">
+                <h2>Dobrý tip ubytování v libovolné lokalitě</h2><p>Potřebujete najít třeba na odpočinek ubytování ( <strong> apartmány </strong> ) na více nocí ? Zaplaťte si z komplexní nabídky pronájmů apartmánů v klidných lokalitách ,  výbornou kuchyní a ještě navíc variaci variaci uvedení oblasti :)</p><ul><a href="/adrspach-broumov/apartmany/" title="Apartmány Adršpach, Broumovsko, Kladské pomezí"><li>Apartmány Adršpach, Broumovsko, Kladské pomezí</a></li><a href="/beskydy/apartmany/" title="Apartmány v Beskydech a Valašsku"><li>Apartmány v Beskydech a Valašsku</a></li><a href="/brno-a-okoli/apartmany/" title="Brno a okolí apartmány"><li>Brno a okolí apartmány</a></li><a href="/chodsko/apartmany/" title="Apartmány Chodsko"><li>Apartmány Chodsko</a></li><a href="/ceske-stredohori/apartmany/" title="České středohoří a Žatecko apartmány"><li>České středohoří a Žatecko apartmány</a></li><a href="/ceske-svycarsko/apartmany/" title="České Švýcarsko apartmány"><li>České Švýcarsko apartmány</a></li><a href="/cesky-kras-brdy/apartmany/" title="Apartmány v Českém krasu a Brdech"><li>Apartmány v Českém krasu a Brdech</a></li><a href="/cesky-raj/apartmany/" title="Apartmány v Českém ráji"><li>Apartmány v Českém ráji</a></li><a href="/hradecko-podzvicinsko/apartmany/" title="Apartmány Hradecko a Podzvičínsko"><li>Apartmány Hradecko a Podzvičínsko</a></li><a href="/jeseniky/apartmany/" title="Apartmány Jeseníky"><li>Apartmány Jeseníky</a></li><a href="/jizerske-hory/apartmany/" title="Apartmány v Jizerských horách"><li>Apartmány v Jizerských horách</a></li><a href="/jizni-cechy/apartmany/" title="Apartmány v Jižních Čechách"><li>Apartmány v Jižních Čechách</a></li><a href="/podyji-a-lednicko-valticky-areal/apartmany/" title="Podyjí, Lednicko Valtický areál apartmány"><li>Podyjí, Lednicko Valtický areál apartmány</a></li><a href="/jizni-morava/apartmany/" title="Jižní Morava a Znojemsko apartmány"><li>Jižní Morava a Znojemsko apartmány</a></li><a href="/karlovy-vary-lazne/apartmany/" title="Karlovy Vary apartmány"><li>Karlovy Vary apartmány</a></li><a href="/krivoklatsko/apartmany/" title="Apartmány Křivoklátsko"><li>Apartmány Křivoklátsko</a></li><a href="/krkonose/apartmany/" title="Krkonoše apartmány"><li>Krkonoše apartmány</a></li><a href="/krusne-hory/apartmany/" title="Apartmány Krušné hory"><li>Apartmány Krušné hory</a></li><a href="/kutnohorsko/apartmany/" title="Kutnohorsko apartmány"><li>Kutnohorsko apartmány</a></li><a href="/luzicke-hory/apartmany/" title="Apartmány Lužické hory"><li>Apartmány Lužické hory</a></li><a href="/machovo-jezero-kokorin/apartmany/" title="Apartmány v Máchově kraji a Kokořínsku"><li>Apartmány v Máchově kraji a Kokořínsku</a></li><a href="/moravsky-kras/apartmany/" title="Moravský kras apartmány"><li>Moravský kras apartmány</a></li><a href="/orlicke-hory/apartmany/" title="Orlické hory a podorlicko apartmány"><li>Orlické hory a podorlicko apartmány</a></li><a href="/orlik-slapy/apartmany/" title="Apartmány Orlík a Slapy"><li>Apartmány Orlík a Slapy</a></li><a href="/pardubicko/apartmany/" title="Apartmány v Pardubicku"><li>Apartmány v Pardubicku</a></li><a href="/plzen-plzensko/apartmany/" title="Apartmány Plzeňsko, Plzeň a okolí"><li>Apartmány Plzeňsko, Plzeň a okolí</a></li><a href="/melnik-polabi/apartmany/" title="Apartmány Polabí, Mělnicko"><li>Apartmány Polabí, Mělnicko</a></li><a href="/poodri/apartmany/" title="Apartmány Poodří"><li>Apartmány Poodří</a></li><a href="/praha-hlavni-mesto/apartmany/" title="Praha a okolí apartmány"><li>Praha a okolí apartmány</a></li><a href="/sazava-posazavi/apartmany/" title="Apartmány v Sázavu a Posázaví"><li>Apartmány v Sázavu a Posázaví</a></li><a href="/slezsko/apartmany/" title="Apartmány v Slezsku"><li>Apartmány v Slezsku</a></li><a href="/slovacko-zlin/apartmany/" title="Slovácko a Zlínsko apartmány"><li>Slovácko a Zlínsko apartmány</a></li><a href="/morava/apartmany/" title="Apartmány Střední Morava, Haná"><li>Apartmány Střední Morava, Haná</a></li><a href="/sumava/apartmany/" title="Apartmány v Šumavě"><li>Apartmány v Šumavě</a></li><a href="/vychodni-cechy/apartmany/" title="Apartmány v Východních Čechách"><li>Apartmány v Východních Čechách</a></li><a href="/vysocina/apartmany/" title="Vysočina apartmány"><li>Vysočina apartmány</a></li></ul><p>Nebo třeba oblíbené ubytování v turistických regionech a v klidném prostředí :</p><ul><a href="/benesov/apartmany/" title="Apartmány v Benešově"><li>Apartmány v Benešově</a></li><a href="/beroun/apartmany/" title="Beroun apartmány"><li>Beroun apartmány</a></li><a href="/blansko/apartmany/" title="Blansko apartmány"><li>Blansko apartmány</a></li><a href="/breclav/apartmany/" title="Apartmány Břeclav"><li>Apartmány Břeclav</a></li><a href="/brno/apartmany/" title="Apartmány Brno"><li>Apartmány Brno</a></li><a href="/brno-venkov/apartmany/" title="Apartmány v Brně"><li>Apartmány v Brně</a></li><a href="/bruntal/apartmany/" title="Bruntál apartmány"><li>Bruntál apartmány</a></li><a href="/cheb/apartmany/" title="Cheb apartmány"><li>Cheb apartmány</a></li><a href="/chomutov/apartmany/" title="Chomutov apartmány"><li>Chomutov apartmány</a></li><a href="/chrudim/apartmany/" title="Apartmány v Chrudimi"><li>Apartmány v Chrudimi</a></li><a href="/ceska-lipa/apartmany/" title="Apartmány v České Lípě"><li>Apartmány v České Lípě</a></li><a href="/ceske-budejovice/apartmany/" title="České Budějovice apartmány"><li>České Budějovice apartmány</a></li><a href="/cesky-krumlov/apartmany/" title="Český Krumlov apartmány"><li>Český Krumlov apartmány</a></li><a href="/decin/apartmany/" title="Děčín apartmány"><li>Děčín apartmány</a></li><a href="/domazlice/apartmany/" title="Apartmány Domažlice"><li>Apartmány Domažlice</a></li><a href="/frydek-mistek/apartmany/" title="Apartmány v Frýdku-Místku"><li>Apartmány v Frýdku-Místku</a></li><a href="/havlickuv-brod/apartmany/" title="Apartmány v Havlíčkově Brodě"><li>Apartmány v Havlíčkově Brodě</a></li><a href="/hodonin/apartmany/" title="Hodonín apartmány"><li>Hodonín apartmány</a></li><a href="/hradec-kralove/apartmany/" title="Hradec Králové apartmány"><li>Hradec Králové apartmány</a></li><a href="/jablonec-nad-nisou/apartmany/" title="Apartmány Jablonec nad Nisou"><li>Apartmány Jablonec nad Nisou</a></li><a href="/jesenik/apartmany/" title="Apartmány Jeseník"><li>Apartmány Jeseník</a></li><a href="/jicin/apartmany/" title="Apartmány Jičín"><li>Apartmány Jičín</a></li><a href="/jihlava/apartmany/" title="Apartmány v Jihlavě"><li>Apartmány v Jihlavě</a></li><a href="/jindrichuv-hradec/apartmany/" title="Jindřichův Hradec apartmány"><li>Jindřichův Hradec apartmány</a></li><a href="/karlovy-vary/apartmany/" title="Karlovy Vary apartmány"><li>Karlovy Vary apartmány</a></li><a href="/karvina/apartmany/" title="Apartmány v Karviné"><li>Apartmány v Karviné</a></li><a href="/kladno/apartmany/" title="Apartmány Kladno"><li>Apartmány Kladno</a></li><a href="/klatovy/apartmany/" title="Apartmány v Klatovech"><li>Apartmány v Klatovech</a></li><a href="/kolin/apartmany/" title="Kolín apartmány"><li>Kolín apartmány</a></li><a href="/kromeriz/apartmany/" title="Apartmány Kroměříž"><li>Apartmány Kroměříž</a></li><a href="/kutna-hora/apartmany/" title="Apartmány Kutná Hora"><li>Apartmány Kutná Hora</a></li><a href="/liberec/apartmany/" title="Apartmány Liberec"><li>Apartmány Liberec</a></li><a href="/litomerice/apartmany/" title="Litoměřice apartmány"><li>Litoměřice apartmány</a></li><a href="/louny/apartmany/" title="Apartmány Louny"><li>Apartmány Louny</a></li><a href="/melnik/apartmany/" title="Apartmány v Mělníku"><li>Apartmány v Mělníku</a></li><a href="/mlada-boleslav/apartmany/" title="Apartmány Mladá Boleslav"><li>Apartmány Mladá Boleslav</a></li><a href="/most/apartmany/" title="Apartmány v Mostě"><li>Apartmány v Mostě</a></li><a href="/nachod/apartmany/" title="Apartmány Náchod"><li>Apartmány Náchod</a></li><a href="/novy-jicin/apartmany/" title="Apartmány v Novém Jičíně"><li>Apartmány v Novém Jičíně</a></li><a href="/nymburk/apartmany/" title="Apartmány v Nymburku"><li>Apartmány v Nymburku</a></li><a href="/olomouc/apartmany/" title="Apartmány Olomouc"><li>Apartmány Olomouc</a></li><a href="/opava/apartmany/" title="Apartmány Opava"><li>Apartmány Opava</a></li><a href="/ostrava/apartmany/" title="Apartmány v Ostravě"><li>Apartmány v Ostravě</a></li><a href="/pardubice/apartmany/" title="Pardubice apartmány"><li>Pardubice apartmány</a></li><a href="/pelhrimov/apartmany/" title="Pelhřimov apartmány"><li>Pelhřimov apartmány</a></li><a href="/pisek/apartmany/" title="Písek apartmány"><li>Písek apartmány</a></li><a href="/plzen/apartmany/" title="Plzeň apartmány"><li>Plzeň apartmány</a></li><a href="/plzen-jih/apartmany/" title="Plzeň-jih apartmány"><li>Plzeň-jih apartmány</a></li><a href="/plzen-sever/apartmany/" title="Plzeň-sever apartmány"><li>Plzeň-sever apartmány</a></li><a href="/prachatice/apartmany/" title="Apartmány Prachatice"><li>Apartmány Prachatice</a></li><a href="/praha/apartmany/" title="Apartmány v Praze"><li>Apartmány v Praze</a></li><a href="/praha-vychod/apartmany/" title="Apartmány Praha-východ"><li>Apartmány Praha-východ</a></li><a href="/praha-zapad/apartmany/" title="Apartmány v Praze západ"><li>Apartmány v Praze západ</a></li><a href="/prerov/apartmany/" title="Apartmány v Přerově"><li>Apartmány v Přerově</a></li><a href="/pribram/apartmany/" title="Apartmány Příbram"><li>Apartmány Příbram</a></li><a href="/prostejov/apartmany/" title="Prostějov apartmány"><li>Prostějov apartmány</a></li><a href="/rakovnik/apartmany/" title="Rakovník apartmány"><li>Rakovník apartmány</a></li><a href="/rokycany/apartmany/" title="Apartmány Rokycany"><li>Apartmány Rokycany</a></li><a href="/rychnov-nad-kneznou/apartmany/" title="Apartmány v Rychnově nad Kněžnou"><li>Apartmány v Rychnově nad Kněžnou</a></li><a href="/semily/apartmany/" title="Semily apartmány"><li>Semily apartmány</a></li><a href="/sokolov/apartmany/" title="Apartmány v Sokolově"><li>Apartmány v Sokolově</a></li><a href="/strakonice/apartmany/" title="Apartmány Strakonice"><li>Apartmány Strakonice</a></li><a href="/svitavy/apartmany/" title="Apartmány v Svitavách"><li>Apartmány v Svitavách</a></li><a href="/sumperk/apartmany/" title="Apartmány Šumperk"><li>Apartmány Šumperk</a></li><a href="/tabor/apartmany/" title="Apartmány v Táboře"><li>Apartmány v Táboře</a></li><a href="/tachov/apartmany/" title="Tachov apartmány"><li>Tachov apartmány</a></li><a href="/teplice/apartmany/" title="Apartmány Teplice"><li>Apartmány Teplice</a></li><a href="/trebic/apartmany/" title="Apartmány Třebíč"><li>Apartmány Třebíč</a></li><a href="/trutnov/apartmany/" title="Apartmány Trutnov"><li>Apartmány Trutnov</a></li><a href="/uherske-hradiste/apartmany/" title="Uherské Hradiště apartmány"><li>Uherské Hradiště apartmány</a></li><a href="/usti-nad-labem/apartmany/" title="Ústí nad Labem apartmány"><li>Ústí nad Labem apartmány</a></li><a href="/usti-nad-orlici/apartmany/" title="Apartmány v Ústí nad Orlicí"><li>Apartmány v Ústí nad Orlicí</a></li><a href="/vsetin/apartmany/" title="Apartmány Vsetín"><li>Apartmány Vsetín</a></li><a href="/vyskov/apartmany/" title="Apartmány v Vyškově"><li>Apartmány v Vyškově</a></li><a href="/zlin/apartmany/" title="Apartmány Zlín"><li>Apartmány Zlín</a></li><a href="/znojmo/apartmany/" title="Apartmány v Znojmě"><li>Apartmány v Znojmě</a></li><a href="/zdar-nad-sazavou/apartmany/" title="Apartmány v Žďáru nad Sázavou"><li>Apartmány v Žďáru nad Sázavou</a></li></ul><p>Použijte volby třídení druhů ubytování ( <strong> apartmánů </strong> ) pro specifičtější objevení ( turistického regionu ,  ceny, služeb, počtu pokojů či osob, kvality ) a dokonce toho co právě hledáte ;)</p><ul><li><strong>Apartmány</strong></li><li><a href="/botel/" title="Botely">Botely</a></li><li><a href="/chalupa/" title="Chalupy">Chalupy</a></li><li><a href="/chata/" title="Chaty">Chaty</a></li><li><a href="/chatka-chatky/" title="Chatky">Chatky</a></li><li><a href="/farma/" title="Farmy">Farmy</a></li><li><a href="/hostel/" title="Hostely">Hostely</a></li><li><a href="/hotel/" title="Hotely">Hotely</a></li><li><a href="/kemp/" title="Kempy">Kempy</a></li><li><a href="/motorest/" title="Motoresty">Motoresty</a></li><li><a href="/penzion/" title="Penziony">Penziony</a></li><li><a href="/rekreacni-zarizeni/" title="Rekreační zařízení">Rekreační zařízení</a></li><li><a href="/roubenka/" title="Roubenky">Roubenky</a></li><li><a href="/statek/" title="Statky">Statky</a></li><li><a href="/ubytovani-v-soukromi/" title="Ubytování v soukromí">Ubytování v soukromí</a></li><li><a href="/ubytovna/" title="Ubytovny">Ubytovny</a></li></ul><p>Či třeba příjemné ubytování na různých místech a možností relaxace :</p><ul><li><a href="/agroturistika-kone/" title="Agroturistiky">Agroturistiky</a></li><li><a href="/bazen-aquapark/" title="Aquaparky">Aquaparky</a></li><li><a href="/cyklistika-turistika/" title="Cyklistika">Cyklistika</a></li><li><a href="/firemni-akce/" title="Firemní akce">Firemní akce</a></li><li><a href="/golf/" title="Golf">Golf</a></li><li><a href="/hrad-zamek/" title="Hrady">Hrady</a></li><li><a href="/lazne/" title="Lázně">Lázně</a></li><li><a href="/levne-ubytovani/" title="Levné ubytování">Levné ubytování</a></li><li><a href="/luxusni-ubytovani/" title="Luxusní ubytování">Luxusní ubytování</a></li><li><a href="/lyzovani-na-horach/" title="Lyžování">Lyžování</a></li><li><a href="/romanticke-ubytovani/" title="Romantická ubytování">Romantická ubytování</a></li><li><a href="/silvestr/" title="Silvestry">Silvestry</a></li><li><a href="/ubytovani-na-horach/" title="Ubytování na horách">Ubytování na horách</a></li><li><a href="/ubytovani-na-samote/" title="Ubytování na samotě">Ubytování na samotě</a></li><li><a href="/wellness-relaxacni-pobyty/" title="Wellness">Wellness</a></li></ul><h3>A nebo zkuste ;)</h3><a href="/slovensko/" title="Slovensko" class="button button--primary">Ubytování Slovensko</a><a href="/slovensko/apartmany/" title="Slovensko" class="button button--primary">Apartmány Slovensko</a><a href="/last-minute/slovensko/" title="Slovensko" class="button button--primary">Akční nabídky ubytování Slovensko</a>            </div>
+
+        </div>
+        <!-- //[layout] - ACCOMMODATION PAGE WRAP -->
+
+    </div>
+    <!-- // [layout] - accodomation list page wrap -->
+
+</div>
+<!-- CONTENT PAGE WRAP -->
+
+<!-- LOGIN MODAL -->
+<div class="remodal" data-remodal-id="modal-login" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content remodal-content--white">
+        <div class="content-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-xmd-8 col-xmd-push-2">
+                        <h1 class="font-w-light font-color-white txt-left">Přihlásit se</h1>
+                    </div>
+                    <div class="col-sm-12 col-xmd-8 col-xmd-push-2">
+                        <form action="/mlift/services/save_form.php" method="post" class="async-form">
+                            <input name="form[form_type]" type="hidden" value="login">
+                            <div class="form-group">  <div class="p-relative form-group-div">
+                                <input name="form[username]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Přihlašovací jméno" onchange="isFocus(this)">
+                                <label for="form[username]" class="form-control--label">Přihlašovací jméno</label>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative form-group-div">
+                                <input name="form[password]" type="password" class="form-control form-control--label--input form-control--white" placeholder="Heslo" onchange="isFocus(this)">
+                                <label for="form[password]" class="form-control--label">Heslo</label>
+                            </div>
+                            </div>
+                            <div class="error-container"></div>
+                            <div class="form-group txt-left">
+                                <div class="flex-md flex--align-center">
+                                    <div><input type="submit" class="button button--primary" value="Přihlásit se"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //LOGIN MODAL -->
+
+<!-- REGISTRATION MODAL -->
+<div class="remodal" data-remodal-id="modal-registration" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content remodal-content--white">
+        <div class="content-box">
+            <div class="container">
+                <form action="/mlift/services/save_form.php" method="post" class="async-form">
+                    <input name="form[form_type]" type="hidden" value="registrace">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="font-w-light font-color-white txt-left">Registrace</h1>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <div class="form-control-select-svg-div svg-icon svg-icon--responsive svg-icon-chevron-left" data-grunticon-embed></div>
+<!--                                    <input name="form[stat]" type="text" class="form-control form-control--white" placeholder="Stát">-->
+                                    <select name="form[stat]" class="form-control form-control-select form-control--white" onchange="isFocus(this)">
+                                        <option class="default-value">Vyberte stát</option>
+                                        <option value="263">Česká republika</option>
+                                        <option value="264">Slovensko</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[nazev_spolecnosti]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Název společnosti" onchange="isFocus(this)">
+                                    <label for="form[nazev_spolecnosti]" class="form-control--label">Název společnosti</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[jmeno_prijmeni]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Jméno a Příjmení" onchange="isFocus(this)">
+                                    <label for="form[jmeno_prijmeni]" class="form-control--label">Jméno a Příjmení</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[ulice]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Adresa (Ulice + ČP)" onchange="isFocus(this)">
+                                            <label for="form[ulice]" class="form-control--label">Adresa (Ulice + ČP)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[psc]" type="text" class="form-control form-control--label--input form-control--white" placeholder="PSČ" onchange="isFocus(this)">
+                                            <label for="form[psc]" class="form-control--label">PSČ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[mesto]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Město" onchange="isFocus(this)">
+                                    <label for="form[mesto]" class="form-control--label">Město</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[ico]" type="text" class="form-control form-control--label--input form-control--white" placeholder="IČO" onchange="isFocus(this)">
+                                            <label for="form[ico]" class="form-control--label">IČO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[dic]" type="text" class="form-control form-control--label--input form-control--white" placeholder="DIČ" onchange="isFocus(this)">
+                                            <label for="form[dic]" class="form-control--label">DIČ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="margin-t-10-md margin-b-clear-md">Pro slovenské subjekty</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <div class="p-relative">
+                                            <input name="form[sk_ico]" type="text" class="form-control form-control--label--input form-control--white" placeholder="IČO" onchange="isFocus(this)">
+                                            <label for="form[sk_ico]" class="form-control--label">IČO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[telefon][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Telefon" onchange="isFocus(this)">
+                                    <label for="form[telefon][0]" class="form-control--label">Telefon</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[fax][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Fax" onchange="isFocus(this)">
+                                    <label for="form[fax][0]" class="form-control--label">Fax</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[mobil][0]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Mobil" onchange="isFocus(this)">
+                                    <label for="form[mobil][0]" class="form-control--label">Mobil</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[email2]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Email" onchange="isFocus(this)">
+                                    <label for="form[email2]" class="form-control--label">Email</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Přihlašovací údaje</p>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[email]" type="text" class="form-control form-control--label--input form-control--white" placeholder="Přihlašovací jméno" onchange="isFocus(this)">
+                                    <label for="form[email]" class="form-control--label">Přihlašovací jméno</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="p-relative">
+                                    <input name="form[heslo]" type="password" class="form-control form-control--label--input form-control--white" placeholder="Heslo" onchange="isFocus(this)">
+                                    <label for="form[heslo]" class="form-control--label">Heslo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-md flex--align-center-md">
+                    <div class="col-md-6">
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox999" name="form[agree][personal_information]" class="agreement">
+                            <label for="checbox999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím s <a href="http://kamsi.cz/dokumenty/text/48" target="_blank">obchodními podmínkami</a></span>
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox9999" name="form[agree][newsletter]" class="agreement">
+                            <label for="checbox9999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím s <a href="http://kamsi.cz/dokumenty/text/46" target="_blank">ochranou osobních údajů</a></span>
+                            </label>
+                        </div>
+                        <div class="checkbox checkbox--pretty txt-left">
+                            <input type="checkbox" id="checbox99999" name="form[agree][newsletter]">
+                            <label for="checbox99999">
+                                <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                <span>Souhlasím se zasláním obch. sdělení</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 txt-left txt-md-right">
+                        <div class="flex-md">
+                            <div class="flex__col-fullwidth-md error-container"></div>
+                        </div>
+                        <div class="flex-md flex--align-center-md">
+                            <div class="flex__col-fullwidth-md margin-b-20 margin-b-clear-md margin-r-20-md"><a href="#" class="padding-right-20-md" data-remodal-target="modal-login">Již mám účet</a></div>
+                            <div><input type="submit" value="Registrovat se" class="button button--primary"></div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // REGISTRATION MODAL -->
+<!-- FILTER MODAL -->
+<div class="remodal" data-remodal-id="modal-filter" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="filter">
+        <h1 class="filter__title font-w-light">Vyhledejte své místo k relaxu</h1>
+        <form name="filter-modal" action="//kamsi.cz/search-form/" method="post">
+
+            <input type="hidden" name="sql[locality][place][user_input]" >
+            <input type="hidden" name="sql[locality][place][autocomplete]" >
+            <input type="hidden" name="sql[locality][locality][city]" >
+            <input type="hidden" name="sql[locality][locality][zip_code]" >
+            <input type="hidden" name="sql[locality][locality][types]" >
+            <input type="hidden" name="sql[locality][location][lat]" >
+            <input type="hidden" name="sql[locality][location][lng]" >
+            <input type="hidden" name="sql[locality][viewport][south]" >
+            <input type="hidden" name="sql[locality][viewport][west]" >
+            <input type="hidden" name="sql[locality][viewport][north]" >
+            <input type="hidden" name="sql[locality][viewport][east]" >
+
+            <div class="content-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group--form-note txt-left">
+                                <div class="p-relative">
+                                    <span class="form-ico form-ico--right"><img src="/mlift/assets/images/ico-location-2.png" class="img-responsive" alt=""></span>
+                                    <input type="text"                                            class="form-control form-control--ico-right form-control--google-api-search address-autocomplete"
+                                           placeholder="Např.: Šumava">
+                                </div>
+                                <span class="form-note form-note--filter">Kam hodláte vyrazit?</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Vyberte ubytování</h4>
+                        </div>
+                        <div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='445' checked='checked' type="checkbox" id="type_accommodation_445"><label for="type_accommodation_445"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">apartmány</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='431'  type="checkbox" id="type_accommodation_431"><label for="type_accommodation_431"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">botel</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='3'  type="checkbox" id="type_accommodation_3"><label for="type_accommodation_3"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">chalupa</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='2'  type="checkbox" id="type_accommodation_2"><label for="type_accommodation_2"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">chata</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='136'  type="checkbox" id="type_accommodation_136"><label for="type_accommodation_136"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">chatka, chatky</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='843'  type="checkbox" id="type_accommodation_843"><label for="type_accommodation_843"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">farma</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='432'  type="checkbox" id="type_accommodation_432"><label for="type_accommodation_432"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">hostel</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='457'  type="checkbox" id="type_accommodation_457"><label for="type_accommodation_457"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">hotel</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='8'  type="checkbox" id="type_accommodation_8"><label for="type_accommodation_8"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kemp</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='506'  type="checkbox" id="type_accommodation_506"><label for="type_accommodation_506"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">motorest</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='6'  type="checkbox" id="type_accommodation_6"><label for="type_accommodation_6"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">penzion</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='842'  type="checkbox" id="type_accommodation_842"><label for="type_accommodation_842"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">rekreační zařízení</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='4'  type="checkbox" id="type_accommodation_4"><label for="type_accommodation_4"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">roubenka</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='844'  type="checkbox" id="type_accommodation_844"><label for="type_accommodation_844"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">statek</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='886'  type="checkbox" id="type_accommodation_886"><label for="type_accommodation_886"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">ubytování v soukromí</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[type_accommodation][]" value='433'  type="checkbox" id="type_accommodation_433"><label for="type_accommodation_433"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">ubytovna</span></label></div></div></div>                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Cena</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="filter__slider">
+                                    <div class="col-md-3">
+                                        <div class="filter__price-amount-mobile">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="filter__price-amount-box filter__price-amount-box--color-white">
+                                                        <div class="form-group">
+                                                            <div class="p-relative">
+                                                                <span class="form-ico form-ico--left">Od</span>
+                                                                <input type="text" name="sql[price_from]"                                                                        class="form-control form-control--ico-left filter__price-val filter__price-val--color-white js-price-slider-amount-1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="filter__price-amount-box filter__price-amount-box--color-white">
+                                                        <div class="form-group">
+                                                            <div class="p-relative">
+                                                                <span class="form-ico form-ico--left">Do</span>
+                                                                <input type="text" name="sql[price_to]"                                                                        class="form-control form-control--ico-left filter__price-val filter__price-val--color-white js-price-slider-amount-2">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__price-amount-lg">
+                                            <div class="filter__price-amount-box filter__price-amount-box--color-white">
+                                                <div class="p-relative">
+                                                    <span class="form-ico form-ico--left">Od</span>
+                                                    <input type="text" name="sql[price_from]"                                                            class="form-control form-control--ico-left filter__price-val filter__price-val--color-white js-price-slider-amount-1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="js-price-slider-range"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="filter__price-amount-lg">
+                                            <div class="filter__price-amount-box filter__price-amount-box--color-white">
+                                                <div class="p-relative">
+                                                    <span class="form-ico form-ico--left">Do</span>
+                                                    <input type="text" name="sql[price_to]"                                                            class="form-control form-control--ico-left filter__price-val filter__price-val--color-white js-price-slider-amount-2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Kapacita</h4>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="form-group">
+                                <select name="sql[persons]" class="form-control form-control--color-white">
+                                    <option value="">Počet osob</option>
+                                    <option value="1" >1</option><option value="2" >2</option><option value="3" >3</option><option value="4" >4</option><option value="5" >5</option><option value="6" >6</option><option value="7" >7</option><option value="8" >8</option><option value="9" >9</option><option value="10" >10</option>                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="form-group">
+                                <select name="sql[beds]" class="form-control form-control--color-white">
+                                    <option value="">Počet lůžek</option>
+                                    <option value="1" >1</option><option value="2" >2</option><option value="3" >3</option><option value="4" >4</option><option value="5" >5</option>                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Druh zážitku</h4>
+                        </div>
+                        <div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='937'  type="checkbox" id="enjoyment_937"><label for="enjoyment_937"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">agroturistika, koně</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='227'  type="checkbox" id="enjoyment_227"><label for="enjoyment_227"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">bazén, aquapark</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='225'  type="checkbox" id="enjoyment_225"><label for="enjoyment_225"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">cyklistika, turistika</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='940'  type="checkbox" id="enjoyment_940"><label for="enjoyment_940"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">firemní akce</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='942'  type="checkbox" id="enjoyment_942"><label for="enjoyment_942"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">golf</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='944'  type="checkbox" id="enjoyment_944"><label for="enjoyment_944"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">hrady, zámky</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='228'  type="checkbox" id="enjoyment_228"><label for="enjoyment_228"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">lázně, lázeňské pobyty</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='986'  type="checkbox" id="enjoyment_986"><label for="enjoyment_986"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">levné ubytování</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='938'  type="checkbox" id="enjoyment_938"><label for="enjoyment_938"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">luxusní ubytování</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='223'  type="checkbox" id="enjoyment_223"><label for="enjoyment_223"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">lyžování na horách</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='933'  type="checkbox" id="enjoyment_933"><label for="enjoyment_933"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">romantické ubytování</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='941'  type="checkbox" id="enjoyment_941"><label for="enjoyment_941"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">silvestr</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='935'  type="checkbox" id="enjoyment_935"><label for="enjoyment_935"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">ubytování na horách</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='934'  type="checkbox" id="enjoyment_934"><label for="enjoyment_934"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">ubytování na samotě</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[enjoyment][]" value='943'  type="checkbox" id="enjoyment_943"><label for="enjoyment_943"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">wellness, relaxační pobyty</span></label></div></div></div>                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Poskytované služby</h4>
+                        </div>
+                        <div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='845'  type="checkbox" id="services_845"><label for="services_845"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">agroturistika</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='79'  type="checkbox" id="services_79"><label for="services_79"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">bar, vinárna</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='89'  type="checkbox" id="services_89"><label for="services_89"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">bezbarierový přístup</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='477'  type="checkbox" id="services_477"><label for="services_477"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">dětské hřiště</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='134'  type="checkbox" id="services_134"><label for="services_134"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">dětský koutek</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='478'  type="checkbox" id="services_478"><label for="services_478"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">dětský koutek</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='90'  type="checkbox" id="services_90"><label for="services_90"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">domácí zvíře</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='446'  type="checkbox" id="services_446"><label for="services_446"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">garáž</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='475'  type="checkbox" id="services_475"><label for="services_475"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">gril, zahradní</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='91'  type="checkbox" id="services_91"><label for="services_91"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">internet</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='94'  type="checkbox" id="services_94"><label for="services_94"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kavárna</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='893'  type="checkbox" id="services_893"><label for="services_893"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">konferenční sál</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='469'  type="checkbox" id="services_469"><label for="services_469"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kuchyňský kout</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='131'  type="checkbox" id="services_131"><label for="services_131"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">lyžárna</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='482'  type="checkbox" id="services_482"><label for="services_482"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">parkoviště, hlídané</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='483'  type="checkbox" id="services_483"><label for="services_483"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">parkoviště, nehlídané</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='471'  type="checkbox" id="services_471"><label for="services_471"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">počítač</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='472'  type="checkbox" id="services_472"><label for="services_472"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">pračka</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='76'  type="checkbox" id="services_76"><label for="services_76"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">restaurace</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='77'  type="checkbox" id="services_77"><label for="services_77"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">salónek</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='78'  type="checkbox" id="services_78"><label for="services_78"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">směnárna</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='480'  type="checkbox" id="services_480"><label for="services_480"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">společenská místnost</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='474'  type="checkbox" id="services_474"><label for="services_474"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">sušák bot</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='473'  type="checkbox" id="services_473"><label for="services_473"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">sušička</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='481'  type="checkbox" id="services_481"><label for="services_481"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">televize</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='92'  type="checkbox" id="services_92"><label for="services_92"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">trezor</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='130'  type="checkbox" id="services_130"><label for="services_130"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">úschovna kol</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='476'  type="checkbox" id="services_476"><label for="services_476"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">venkovní terasa</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='894'  type="checkbox" id="services_894"><label for="services_894"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">WIFI</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[services][]" value='479'  type="checkbox" id="services_479"><label for="services_479"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">zahrada</span></label></div></div></div>                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="filter__sub-title font-w-normal">Vybavení</h4>
+                        </div>
+                        <div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='66'  type="checkbox" id="equipment_66"><label for="equipment_66"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">balkon</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='489'  type="checkbox" id="equipment_489"><label for="equipment_489"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">cd-přehrávač</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='95'  type="checkbox" id="equipment_95"><label for="equipment_95"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">dětská postýlka</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='488'  type="checkbox" id="equipment_488"><label for="equipment_488"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">domácí kino</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='99'  type="checkbox" id="equipment_99"><label for="equipment_99"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">internetová přípojka</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='67'  type="checkbox" id="equipment_67"><label for="equipment_67"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kabelová televize</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='68'  type="checkbox" id="equipment_68"><label for="equipment_68"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">klimatizace</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='485'  type="checkbox" id="equipment_485"><label for="equipment_485"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kuchyňské vybavení</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='470'  type="checkbox" id="equipment_470"><label for="equipment_470"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">kuchyňský kout</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='100'  type="checkbox" id="equipment_100"><label for="equipment_100"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">lednice</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='484'  type="checkbox" id="equipment_484"><label for="equipment_484"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">mikrovlnná trouba</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='101'  type="checkbox" id="equipment_101"><label for="equipment_101"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">minibar</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='486'  type="checkbox" id="equipment_486"><label for="equipment_486"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">myčka nádobí</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='487'  type="checkbox" id="equipment_487"><label for="equipment_487"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">pračka</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='96'  type="checkbox" id="equipment_96"><label for="equipment_96"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">satelit</span></label></div></div></div><div class="col-sm-6 col-md-3"><div class="form-group"><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='69'  type="checkbox" id="equipment_69"><label for="equipment_69"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">sociální zařízení WC, sprcha</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='490'  type="checkbox" id="equipment_490"><label for="equipment_490"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">sušička</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='102'  type="checkbox" id="equipment_102"><label for="equipment_102"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">telefon</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='97'  type="checkbox" id="equipment_97"><label for="equipment_97"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">televizor</span></label></div><div class="checkbox checkbox--pretty"><input name="sql[equipment][]" value='98'  type="checkbox" id="equipment_98"><label for="equipment_98"><div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div><span class="filter__label">trezor</span></label></div></div></div>                    </div>
+                </div>
+            </div>
+
+            <div class="content-box txt-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="form-group">
+                                <div class="checkbox checkbox--pretty">
+                                    <input name="sql[last_minute]" value="1" type="checkbox" id="last_minute" ><label for="last_minute">
+                                        <div class="checkbox__fake"><span class="filter__ico checkbox__fake-ico svg-icon svg-icon--responsive svg-icon-check" data-grunticon-embed></span></div>
+                                        <span class="filter__label">Jen Last Minute</span></label></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter__footer">
+                <input type="submit" name="submit" value="Vyhledat ubytování" class="button button--primary">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- //FILTER MODAL -->
+    <!-- DETAIL MODAL -->
+    <div class="remodal remodal-accommodation-detail remodal-bg-white" data-remodal-id="modal-detail" data-remodal-options="hashTracking: false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <button id="accommodation-element-button" data-remodal-target="modal-detail" style="display: none"></button>
+        <div id="accommodation-element"></div>
+    </div>
+    <!-- //DETAIL MODAL -->
+
+<!-- MOBILE NAV MODAL -->
+<div class="remodal" data-remodal-id="modal-mobile-nav" data-remodal-options="closeOnOutsideClick: false, hashTracking: false" id="js-remodal-mobile-nav">
+    <button data-remodal-action="close" class="remodal-close" id="remodalMobileNavClose"></button>
+    <div class="navbar__mobile-nav"></div>
+</div>
+<!-- //MOBILE NAV MODAL -->
+
+    <script type="text/javascript" src="/www/js/libs/01-markerclusterer.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+
+    <script type="text/javascript" src="/mlift/assets/js/main.min.js?v=4"></script>
+
+    <script type="text/javascript" src="/www/js/libs/00-jquery-ajaxForm.js"></script>
+
+    <script type="text/javascript" src="/www/js/template.js?v=6"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpTp1IVCeLoaIGRqEB_py4FvdBeZcL2so&libraries=places&callback=googleMapsInit"></script>
+
+        <script>
+        var autocomplete = {"tr-737":"Adr\u0161pach, Broumovsko, Kladsk\u00e9 pomez\u00ed","tr-728":"Beskydy a Vala\u0161sko","tr-858":"B\u00edl\u00e9 Karpaty","tr-856":"Bratislava a okol\u00ed","tr-725":"Brno a okol\u00ed","tr-732":"Chodsko","tr-879":"\u010cergov","tr-735":"\u010cesk\u00e9 st\u0159edoho\u0159\u00ed a \u017datecko","tr-706":"\u010cesk\u00e9 \u0160v\u00fdcarsko, D\u011b\u010d\u00ednsko","tr-992":"\u010cesk\u00fd kras a Brdy","tr-710":"\u010cesk\u00fd r\u00e1j","tr-733":"Hradecko a Podzvi\u010d\u00ednsko","tr-997":"Hron, Pohron\u00ed","tr-859":"Javorn\u00edky, Kysuce","tr-723":"Jesen\u00edky","tr-707":"Jizersk\u00e9 hory, Fr\u00fddlantsko a Liberecko","tr-721":"Ji\u017en\u00ed \u010cechy","tr-996":"Ji\u017en\u00ed Morava -  Podyj\u00ed, Lednicko Valtick\u00fd are\u00e1l, B\u0159eclav, P\u00e1lava","tr-726":"Ji\u017en\u00ed Morava - Znojemsko","tr-712":"Karlovy Vary a z\u00e1pado\u010desk\u00e9 l\u00e1zn\u011b","tr-877":"Ko\u0161ice a okol\u00ed","tr-713":"K\u0159ivokl\u00e1tsko a Rakovnicko","tr-708":"Krkono\u0161e a Podkrkono\u0161\u00ed","tr-709":"Kru\u0161n\u00e9 hory","tr-994":"Kutnohorsko","tr-870":"Liptov, Liptovsk\u00e1 Mara","tr-734":"Lu\u017eick\u00e9 hory","tr-736":"M\u00e1ch\u016fv kraj, Koko\u0159\u00ednsko","tr-866":"Mal\u00e1 Fatra, \u017diar","tr-855":"Mal\u00e9 Karpaty","tr-731":"Moravsk\u00fd kras","tr-881":"N\u00edzk\u00e9 Beskydy, Bukovsk\u00e9 Vrchy","tr-869":"N\u00edzk\u00e9 Tatry","tr-880":"Ondavsk\u00e1 Vrchovina","tr-865":"Orava","tr-711":"Orlick\u00e9 hory a podorlicko","tr-717":"Orl\u00edk a Slapy","tr-995":"Pardubicko","tr-872":"Pieniny, Levo\u010dsk\u00e9 Vrchy, Spi\u0161sk\u00e1 Magura","tr-716":"Plze\u0148sko, Plze\u0148 a okol\u00ed","tr-864":"Podunajsk\u00e1 N\u00ed\u017eina","tr-876":"Poiplie, Juhoslovensk\u00e1 kotlina","tr-740":"Polab\u00ed, M\u011blnicko","tr-868":"Po\u013eana, Podpo\u013eanie","tr-739":"Pood\u0159\u00ed","tr-857":"Pov\u00e1\u017e\u00ed, Pova\u017esk\u00fd Inovec","tr-714":"Praha a okol\u00ed","tr-993":"S\u00e1zava a Pos\u00e1zav\u00ed","tr-878":"Sl\u00e1nsk\u00e9 Vrchy","tr-738":"Slezsko","tr-727":"Slov\u00e1cko a Zl\u00ednsko","tr-875":"Slovensk\u00e9 Rudoho\u0159\u00ed (Stolick\u00e9 vrchy, Volovsk\u00e9 Vrchy)","tr-874":"Slovensk\u00fd Kras","tr-873":"Slovensk\u00fd Raj","tr-860":"Str\u00e1\u017eovsk\u00e9 vrchy","tr-724":"St\u0159edn\u00ed Morava, Han\u00e1","tr-882":"\u0160\u00edrava, Vihorlat, Horn\u00ed Zempl\u00edn","tr-863":"\u0160tiavnick\u00e9 Vrchy","tr-718":"\u0160umava a \u010ceskokrumlovsko","tr-861":"Tribe\u010d","tr-867":"Velk\u00e1 Fatra","tr-862":"Vt\u00e1\u010dnik","tr-715":"V\u00fdchodn\u00ed \u010cechy","tr-883":"V\u00fdchodoslovensk\u00e1 n\u00ed\u017eina, Doln\u00ed Zempl\u00edn","tr-722":"Vyso\u010dina","tr-871":"Vysok\u00e9 Tatry","tr-854":"Z\u00e1ho\u0159\u00ed, Z\u00e1horsk\u00e1 n\u00ed\u017eina","ok-79":"B\u00e1novce nad Bebravou","ok-80":"Bansk\u00e1 Bystrica","ok-81":"Bansk\u00e1 \u0160tiavnica","ok-82":"Bardejov","ok-1":"Bene\u0161ov","ok-2":"Beroun","ok-3":"Blansko","ok-83":"Bratislava","ok-7":"B\u0159eclav","ok-88":"Brezno","ok-4":"Brno","ok-5":"Brno-venkov","ok-6":"Brunt\u00e1l","ok-89":"Byt\u010da","ok-8":"Cheb","ok-9":"Chomutov","ok-10":"Chrudim","ok-90":"\u010cadca","ok-73":"\u010cesk\u00e1 L\u00edpa","ok-72":"\u010cesk\u00e9 Bud\u011bjovice","ok-74":"\u010cesk\u00fd Krumlov","ok-12":"D\u011b\u010d\u00edn","ok-91":"Detva","ok-92":"Doln\u00fd Kub\u00edn","ok-11":"Doma\u017elice","ok-93":"Dunajsk\u00e1 Streda","ok-13":"Fr\u00fddek-M\u00edstek","ok-94":"Galanta","ok-95":"Gelnica","ok-14":"Havl\u00ed\u010dk\u016fv Brod","ok-96":"Hlohovec","ok-16":"Hodon\u00edn","ok-17":"Hradec Kr\u00e1lov\u00e9","ok-97":"Humenn\u00e9","ok-98":"Ilava","ok-18":"Jablonec nad Nisou","ok-19":"Jesen\u00edk","ok-22":"Ji\u010d\u00edn","ok-20":"Jihlava","ok-21":"Jind\u0159ich\u016fv Hradec","ok-23":"Karlovy Vary","ok-24":"Karvin\u00e1","ok-99":"Ke\u017emarok","ok-25":"Kladno","ok-26":"Klatovy","ok-27":"Kol\u00edn","ok-100":"Kom\u00e1rno","ok-101":"Ko\u0161ice","ok-105":"Ko\u0161ice-okolie","ok-28":"Krom\u011b\u0159\u00ed\u017e","ok-106":"Krupina","ok-29":"Kutn\u00e1 Hora","ok-107":"Kysuck\u00e9 Nov\u00e9 Mesto","ok-108":"Levice","ok-109":"Levo\u010da","ok-30":"Liberec","ok-110":"Liptovsk\u00fd Mikul\u00e1\u0161","ok-31":"Litom\u011b\u0159ice","ok-32":"Louny","ok-111":"Lu\u010denec","ok-112":"Malacky","ok-113":"Martin","ok-114":"Medzilaborce","ok-35":"M\u011bln\u00edk","ok-115":"Michalovce","ok-33":"Mlad\u00e1 Boleslav","ok-34":"Most","ok-116":"Myjava","ok-38":"N\u00e1chod","ok-117":"N\u00e1mestovo","ok-118":"Nitra","ok-119":"Nov\u00e9 Mesto n.V\u00e1hom","ok-120":"Nov\u00e9 Z\u00e1mky","ok-36":"Nov\u00fd Ji\u010d\u00edn","ok-37":"Nymburk","ok-39":"Olomouc","ok-40":"Opava","ok-41":"Ostrava","ok-42":"Pardubice","ok-121":"Partiz\u00e1nske","ok-43":"Pelh\u0159imov","ok-122":"Pezinok","ok-123":"Pie\u0161\u0165any","ok-51":"P\u00edsek","ok-45":"Plze\u0148","ok-44":"Plze\u0148-jih","ok-46":"Plze\u0148-sever","ok-124":"Polt\u00e1r","ok-125":"Poprad","ok-126":"Pova\u017esk\u00e1 Bystrica","ok-47":"Prachatice","ok-15":"Praha","ok-48":"Praha-v\u00fdchod","ok-49":"Praha-z\u00e1pad","ok-52":"P\u0159erov","ok-127":"Pre\u0161ov","ok-53":"P\u0159\u00edbram","ok-128":"Prievidza","ok-50":"Prost\u011bjov","ok-129":"P\u00fachov","ok-54":"Rakovn\u00edk","ok-130":"Rev\u00faca","ok-131":"Rimavsk\u00e1 Sobota","ok-55":"Rokycany","ok-132":"Ro\u017e\u0148ava","ok-133":"Ru\u017eomberok","ok-56":"Rychnov nad Kn\u011b\u017enou","ok-134":"Sabinov","ok-57":"Semily","ok-135":"Senec","ok-136":"Senica","ok-137":"Skalica","ok-138":"Snina","ok-139":"Sobrance","ok-58":"Sokolov","ok-140":"Spi\u0161sk\u00e1 Nov\u00e1 Ves","ok-141":"Star\u00e1 \u013dubov\u0148a","ok-59":"Strakonice","ok-142":"Stropkov","ok-143":"Svidn\u00edk","ok-60":"Svitavy","ok-144":"\u0160a\u013ea","ok-75":"\u0160umperk","ok-64":"T\u00e1bor","ok-61":"Tachov","ok-62":"Teplice","ok-145":"Topo\u013e\u010dany","ok-65":"T\u0159eb\u00ed\u010d","ok-146":"Trebi\u0161ov","ok-147":"Tren\u010d\u00edn","ok-148":"Trnava","ok-63":"Trutnov","ok-149":"Tur\u010diansk\u00e9 Teplice","ok-150":"Tvrdo\u0161\u00edn","ok-66":"Uhersk\u00e9 Hradi\u0161t\u011b","ok-76":"\u00dast\u00ed nad Labem","ok-77":"\u00dast\u00ed nad Orlic\u00ed","ok-151":"Ve\u013ek\u00fd Krt\u00ed\u0161","ok-152":"Vranov nad Top\u013eou","ok-67":"Vset\u00edn","ok-68":"Vy\u0161kov","ok-153":"Zlat\u00e9 Moravce","ok-69":"Zl\u00edn","ok-70":"Znojmo","ok-154":"Zvolen","ok-155":"\u017darnovica","ok-71":"\u017d\u010f\u00e1r nad S\u00e1zavou","ok-156":"\u017diar nad Hronom","ok-157":"\u017dilina"};
+    </script>
+
+    
+                <a href="http://www.toplist.cz/"><img src="https://toplist.cz/count.asp?id=854896" alt="TOPlist" width="0" height="0" /></a>
+
+
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-2445613-5', 'auto');
+                ga('send', 'pageview');
+            </script>
+        
+    </body>
+</html>
